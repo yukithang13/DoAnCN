@@ -1,0 +1,55 @@
+﻿@using DoAnCN.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+
+<div class="loginn">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <h2 class="active"> Sign In </h2>
+            <h2 class="inactive underlineHover">Sign Up </h2>
+
+            <!-- Icon -->
+
+            <!-- Login Form -->
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <h4>Use a local account to log in.</h4>
+                <hr />
+                @Html.ValidationSummary(true, "")
+                <div class="form-group">
+                   
+                        @Html.TextBoxFor(m => m.Email, new { @type = "text", @id = "login", @class = "fadeIn second input-login", @name = "login", @placeholder = "Login" })
+                        @Html.ValidationMessageFor(m => m.Email, "")
+                   
+                </div>
+                <div class="form-group">              
+                        @Html.PasswordFor(m => m.Password, new { @type = "text", @id = "password", @class = "fadeIn third input-login", @name = "login", @placeholder = "Password" })
+                        @Html.ValidationMessageFor(m => m.Password, "")
+                </div>
+                <div class="form-group">
+                        <div class="checkbox">
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                            @Html.LabelFor(m => m.RememberMe)
+                        </div>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <input type="submit" class="fadeIn fourth" value="Log In" />
+                    </div>
+                </div>
+                <p >
+                    @Html.ActionLink("Register as a new user", "Register")
+                </p>
+            }
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="#">Forgot Password?</a>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Travel</title>
+    <link rel="stylesheet" href="~/Content/style.css">
+    <link rel="stylesheet" href="~/Content/login.css">
+    <link rel="stylesheet" href="~/Content/Contact.css">
+    <link rel="stylesheet" href="~/Content/tourCard.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="~/Content/fontawesome-free-5.15.4-web/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <nav class="navbar1">
+        <div class="max-width">
+            <div class="logo">
+                @Html.ActionLink("Travel", "Index", "Home")
+            </div>
+            <ul class="menu">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Tour", "Tour", "Home")</li>
+                <li>@Html.ActionLink("Hotel", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Ct", "Home")</li>
+            </ul>
+            @Html.Partial("_LoginPartial")
+        </div>
+    </nav>
+    <ul class="social-icons-1">
+        <li class="social-icons-li"><a class="facebook" href="#"><i class="fab fa-facebook"></i></a></li>
+        <li class="social-icons-li"><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+        <li class="social-icons-li"><a class="youtube" href="#"><i class="fab fa-youtube"></i></a></li>
+        <li class="social-icons-li"><a class="instagram" href="#"><i class="fab fa-instagram"></i></a></li>
+    </ul>
+
+    @RenderBody()
+    <hr />
+
+    <h3 class="home-page__title mb-4">Vì sao chọn chúng tôi ?</h3>
+    <div class="row-1 g-5 g-lg-3 d-none d-lg-flex">
+        <div class="col-4-1">
+            <div class="why-item">
+                <i class="fas fa-satellite-dish icon--why-1"></i>
+                <h5 class="card-text mb-3 why-item__title">Mạng bán tour</h5>
+                <p class="card-text mb-1">Đầu tiên tại Việt Nam</p>
+                <p class="card-text">Ứng dụng công nghệ mới nhất</p>
+            </div>
+        </div>
+        <div class="col-4-1">
+            <div class="why-item">
+                <i class="fas fa-credit-card icon--why-2"></i>
+                <h5 class="card-text mb-3 why-item__title">Thanh toán</h5>
+                <p class="card-text mb-1">An toàn &amp; linh hoạt</p>
+                <p class="card-text">Liên kết với các tổ chức tài chính</p>
+            </div>
+        </div>
+        <div class="col-4-1">
+            <div class="why-item">
+                <i class="fas fa-money-check-alt icon--why-3"></i>
+                <h5 class="card-text mb-3 why-item__title">Giá cả</h5>
+                <p class="card-text mb-1">Luôn có mức giá tốt nhất</p>
+                <p class="card-text">Bảo đảm giá tốt</p>
+            </div>
+        </div>
+        <div class="col-4-1">
+            <div class="why-item">
+                <i class="fas fa-route icon--why-4"></i>
+                <h5 class="card-text mb-3 why-item__title">Địa điểm</h5>
+                <p class="card-text mb-1">Đa dạng, chất lượng</p>
+                <p class="card-text">Đạt chất lượng tốt nhất</p>
+            </div>
+        </div>
+        <div class="col-4-1">
+            <div class="why-item">
+                <i class="fas fa-suitcase-rolling icon--why-5"></i>
+                <h5 class="card-text mb-3 why-item__title">Đặt tour</h5>
+                <p class="card-text mb-1">Dễ dàng và nhanh chóng</p>
+                <p class="card-text">Đặt tour chỉ với 3 bước</p>
+            </div>
+        </div>
+        <div class="col-4-1">
+            <div class="why-item">
+                <i class="fas fa-headset icon--why-6"></i>
+                <h5 class="card-text mb-3 why-item__title">Hỗ trợ</h5>
+                <p class="card-text mb-1">Từ 08h00 - 22h00</p>
+                <p class="card-text">Hotline &amp; hỗ trợ trực tuyến</p>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h6>About</h6>
+                    <p class="text-justify">
+                        One of the leading travel brands in Southeast Asia, enhancing the position and image of Vietnam.
+                        Developing in the direction of integration, sustainability and efficiency; business activities associated with indigenous cultural values and community interests.
+                    </p>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Place</h6>
+                    <ul class="footer-links">
+                        <li><a href="http://scanfcode.com/category/c-language/">Miền Bắc</a></li>
+                        <li><a href="http://scanfcode.com/category/front-end-development/">Miền Trung</a></li>
+                        <li><a href="http://scanfcode.com/category/back-end-development/">Miền Nam</a></li>
+                        <li><a href="http://scanfcode.com/category/java-programming-language/">Miền Tây</a></li>
+                        <li><a href="http://scanfcode.com/category/android/">Hải Đảo</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Contact</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Youtube</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li>ngotandat104@gmail.com</li>
+                        <li><a href="#">0997312373</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">
+                        &copy; 2021 All Rights Reserved by
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="social-icons">
+                        <li><a class="facebook" href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a class="youtube" href="#"><i class="fab fa-youtube"></i></a></li>
+                        <li><a class="instagram" href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-O2SlJFwQ0r0PVirwd2z_DnoUTBz0OiI&callback=initMap&v=weekly"
+            async></script>
+    <!--https://maps.googleapis.com/maps/api/js?key=AIzaSyC-O2SlJFwQ0r0PVirwd2z_DnoUTBz0OiI&callback=initialize&language=vi&region=vi-->
+    <script src="~/Scripts/Js.js"></script>
+
+
+</body>
+</html>

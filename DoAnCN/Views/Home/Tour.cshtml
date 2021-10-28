@@ -1,0 +1,81 @@
+﻿@model IEnumerable<DoAnCN.Models.Tour>
+
+
+
+@{
+    ViewBag.Title = "Tour";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="contact-1">
+
+</div>
+
+<section class="hero-section">
+
+    <div class="card-grid">
+        @foreach (var item in Model)
+        {
+            <a class="card-1" href="#">
+                <div class="card__background" style="background-image: url(@item.ImageTour)"></div>
+                <div class="card__content">
+                    <p class="card__category">@item.TitleTour</p>
+                    <h3 class="card__heading">@item.DescTour</h3>
+                </div>
+            </a>
+        }
+
+    </div>
+
+
+</section>
+
+<div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
+        <div class="searchbar">
+            <input id="Search" class="search_input" type="text" name="" placeholder="Search...">
+            <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+        </div>
+    </div>
+</div>
+
+
+<h2 class="title-product"> Tour Display</h2>
+<div class="grid">
+
+    @foreach (var item in Model)
+    {
+        <div class="grid-item Search">
+            <div class="card ">
+                <img class="card-img" src="@item.ImageTour" alt="Rome" />
+                <div class="card-content">
+                    <h1 class="card-header">@item.TitleTour</h1>
+                    <p class="card-text">
+                        @item.DescTour
+                    </p>
+                    <button class="card-btn">Visit <span>&rarr;</span></button>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#Search").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $(".Search").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
+
+
