@@ -1,0 +1,219 @@
+﻿@model DoAnCN.Models.Tour
+
+@{
+    ViewBag.Title = "TourInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="contact-1">
+
+</div>
+<div class="tour-Info">
+    <div class="row">
+        <div class="col-md-6 col-12 left">
+            <div class="warp-mark">
+                <i class="fal fa-ticket"></i><label>@Html.DisplayFor(model => model.IdTour)</label>
+            </div>
+            <h1 class="title"> @Html.DisplayFor(model => model.TitleTour)</h1>
+            <div class="short-rating">
+
+                <div class="s-wishlist">
+                    <i class="fas fa-heart"></i><label class="view-tour"> @Html.DisplayFor(model => model.LuotView)</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-12 right">
+            <div class="group-price">
+                <div class="sale-price">
+                    <p><span class="price">@Html.DisplayFor(model => model.PriceTour)₫</span>/10 khách</p>
+                </div>
+                <div class="saving">
+                </div>
+            </div>
+            <div class="group-add-cart">
+                <a href="#" class="add-to-cart">
+                    <i class="fas fa-cart-plus"></i>
+                    <label>
+                        Đặt ngay
+                    </label>
+                </a>
+                <a href="#" class="add-to-group" @*data-bs-toggle="modal" data-bs-target="#supportModal"*@>
+                    <label>Liên hệ tư vấn</label>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="imgTour"> <img class="Info-img" src="~/Content/images/5.jpg" alt="Tour" /></div>
+    <div class="row">
+        <div class="col-md-5 col-12 left ">
+            <p class="s-title-03 tour-des">
+                @Html.DisplayFor(model => model.DescTour)
+            </p>
+
+            <div class="box-order">
+                <div class="time">
+                    <p>Khởi hành <b>@Html.DisplayFor(model => model.StartTour)</b></p>
+                    <p>Thời gian <b>@Html.DisplayFor(model => model.TimeTour)</b></p>
+                    <p>Nơi khởi hành <b>@Html.DisplayFor(model => model.StartingGate)</b></p>
+                    <p>
+                        Số chỗ còn nhận <b>6</b>
+                    </p>
+                </div>
+
+            </div>
+            <div class="box-support">
+                <label>Quý khách cần hỗ trợ?</label>
+                <div class="group-contact">
+                    <a href="https://webcall.talking.vn/frame-click-to-call/new?code=tCEZl1-MKPuA6JU-czVAScCb0pPkHmPt" onclick="javascript:window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=375,height=667');return false;" target="_blank" class="phone">
+                        <i class="fas fa-phone-volume"></i>
+                        <p>Gọi miễn phí <br>qua internet</p>
+                    </a>
+                    <a href="mailto:info@vietravel.com" class="mail">
+                        <i class="far fa-envelope"></i>
+                        <p>Gửi yêu cầu <br>hỗ trợ ngay</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7 col-12 right">
+            <div class="group-services">
+                <div class="item">
+                    <i class="fas fa-hourglass-start"></i>
+                    <label>Thời gian</label>
+                    <p>@Html.DisplayFor(model => model.TimeTour)</p>
+                </div>
+                <div class="item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <label>Điểm tham quan</label>
+                    <p class="p-thamquan">Tận hưởng dịch vụ tại Thế giới khoáng Nóng Minera Bình Châu như Ngâm tắm khoáng hồ Hydro Pool, Công Viên Thế Giới Khoáng Around The World, Khu ngâm khoáng Wabisabi, Bùn khoáng Việt Nam, Hồ khoáng Dara, tắm Onsen kiểu Nhật, Công viên rừng Minera Forest, Ngâm chân khoáng nóng tại khu Springs Land Khu luộc trứng 82 Degrees, Hồ ngâm khoáng ngoài trời lớn nhất Đông Nam Á </p>
+                </div>
+                <div class="item">
+                    <i class="fas fa-utensils"></i>
+                    <label>Ẩm thực</label>
+                    <p>Buffet sáng</p>
+                </div>
+                <div class="item">
+                    <i class="fas fa-hotel"></i>
+                    <label>Khách sạn</label>
+                    <p>@Html.DisplayFor(model => model.Hotel)</p>
+                </div>
+                <div class="item">
+                    <i class="fas fa-truck"></i>
+                    <label>Phương tiện di chuyển</label>
+                    <p>@Html.DisplayFor(model => model.Vehicle)</p>
+                </div>
+                <div class="item">
+                    <i class="fas fa-plus-circle"></i>
+                    <br />
+                    <label>Dịch vụ đi kèm</label>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+@*<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdTour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdTour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TitleTour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TitleTour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescTour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescTour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageTour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageTour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartingGate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartingGate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartTour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartTour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeTour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeTour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hotel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hotel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LuotView)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LuotView)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdCustumer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdCustumer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PriceTour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PriceTour)
+        </dd>
+
+    </dl>
+</div>*@
+

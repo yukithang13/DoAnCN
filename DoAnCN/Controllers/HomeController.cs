@@ -13,7 +13,11 @@ namespace DoAnCN.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            
+
+            var db = TourBUS.Top4().ToPagedList(1, 4);
+            return View(db);
+            
         }
 
         public ActionResult About()
@@ -35,17 +39,40 @@ namespace DoAnCN.Controllers
             return View();
         }
 
-        TravelContext db = new TravelContext();
+        DulichEntities1 db = new DulichEntities1();
         public ActionResult Tour()
         {
-            int page = 1; int pagesize = 16;
+            int page = 1; int pagesize = 100;
 
             var db = TourBUS.DanhSach().ToPagedList(page, pagesize);
-            var db1 = TourBUS.Top4().ToPagedList(1, 3);
-            var mut = new { db, db1 };
-
-            return View(db1);
+            return View(db);
             
+        }
+
+
+        public ActionResult TourInfo(int id)
+        {
+            var db = TourBUS.DanhSach();
+
+            Tour tour1 = new Tour();
+            
+            foreach (Tour tour in db)
+            {
+                if (tour.IdTour == id)
+                {
+                    tour1 = tour;
+                    break;
+                }
+            }
+            if (tour1 == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tour1);
+
+           
+            
+
         }
 
 

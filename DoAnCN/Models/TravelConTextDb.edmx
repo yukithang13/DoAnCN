@@ -1,0 +1,669 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DulichModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="IdAdmin" />
+          </Key>
+          <Property Name="IdAdmin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PasswordAD" Type="char" MaxLength="15" />
+          <Property Name="EmailAD" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Custumer">
+          <Key>
+            <PropertyRef Name="IdCustumer" />
+          </Key>
+          <Property Name="IdCustumer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullNameCustumer" Type="nvarchar" MaxLength="100" />
+          <Property Name="DateOfBirth" Type="varchar" MaxLength="50" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DetailTour">
+          <Key>
+            <PropertyRef Name="IdContact" />
+            <PropertyRef Name="IdTour" />
+          </Key>
+          <Property Name="IdContact" Type="int" Nullable="false" />
+          <Property Name="IdTour" Type="int" Nullable="false" />
+          <Property Name="RegistrationDate" Type="datetime" />
+          <Property Name="Status" Type="nvarchar" MaxLength="150" />
+          <Property Name="Payments" Type="nvarchar" MaxLength="100" />
+          <Property Name="PaymentTerm" Type="datetime" />
+        </EntityType>
+        <EntityType Name="InfoContact">
+          <Key>
+            <PropertyRef Name="IdContact" />
+          </Key>
+          <Property Name="IdContact" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="char" MaxLength="100" />
+          <Property Name="Phone" Type="char" MaxLength="12" />
+          <Property Name="CustumersNumber" Type="int" />
+          <Property Name="Note" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Popular">
+          <Key>
+            <PropertyRef Name="IdPopular" />
+          </Key>
+          <Property Name="IdPopular" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdTour" Type="int" />
+        </EntityType>
+        <EntityType Name="Tour">
+          <Key>
+            <PropertyRef Name="IdTour" />
+          </Key>
+          <Property Name="IdTour" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TitleTour" Type="nvarchar" MaxLength="100" />
+          <Property Name="DescTour" Type="nvarchar(max)" />
+          <Property Name="ImageTour" Type="varchar" MaxLength="150" />
+          <Property Name="StartingGate" Type="nvarchar" MaxLength="100" />
+          <Property Name="StartTour" Type="date" />
+          <Property Name="TimeTour" Type="int" />
+          <Property Name="Hotel" Type="nvarchar" MaxLength="100" />
+          <Property Name="Vehicle" Type="nvarchar" MaxLength="50" />
+          <Property Name="LuotView" Type="int" />
+          <Property Name="IdCustumer" Type="int" />
+          <Property Name="PriceTour" Type="money" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetailTour_InfoContact">
+          <End Role="InfoContact" Type="Self.InfoContact" Multiplicity="1" />
+          <End Role="DetailTour" Type="Self.DetailTour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InfoContact">
+              <PropertyRef Name="IdContact" />
+            </Principal>
+            <Dependent Role="DetailTour">
+              <PropertyRef Name="IdContact" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetailTour_Tour">
+          <End Role="Tour" Type="Self.Tour" Multiplicity="1" />
+          <End Role="DetailTour" Type="Self.DetailTour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tour">
+              <PropertyRef Name="IdTour" />
+            </Principal>
+            <Dependent Role="DetailTour">
+              <PropertyRef Name="IdTour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Popular_Tour">
+          <End Role="Tour" Type="Self.Tour" Multiplicity="0..1" />
+          <End Role="Popular" Type="Self.Popular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tour">
+              <PropertyRef Name="IdTour" />
+            </Principal>
+            <Dependent Role="Popular">
+              <PropertyRef Name="IdTour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tour_Custumer">
+          <End Role="Custumer" Type="Self.Custumer" Multiplicity="0..1" />
+          <End Role="Tour" Type="Self.Tour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Custumer">
+              <PropertyRef Name="IdCustumer" />
+            </Principal>
+            <Dependent Role="Tour">
+              <PropertyRef Name="IdCustumer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DulichModelStoreContainer">
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Custumer" EntityType="Self.Custumer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DetailTour" EntityType="Self.DetailTour" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InfoContact" EntityType="Self.InfoContact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Popular" EntityType="Self.Popular" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tour" EntityType="Self.Tour" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetailTour_InfoContact" Association="Self.FK_DetailTour_InfoContact">
+            <End Role="InfoContact" EntitySet="InfoContact" />
+            <End Role="DetailTour" EntitySet="DetailTour" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetailTour_Tour" Association="Self.FK_DetailTour_Tour">
+            <End Role="Tour" EntitySet="Tour" />
+            <End Role="DetailTour" EntitySet="DetailTour" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Popular_Tour" Association="Self.FK_Popular_Tour">
+            <End Role="Tour" EntitySet="Tour" />
+            <End Role="Popular" EntitySet="Popular" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tour_Custumer" Association="Self.FK_Tour_Custumer">
+            <End Role="Custumer" EntitySet="Custumer" />
+            <End Role="Tour" EntitySet="Tour" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DulichModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="IdAdmin" />
+          </Key>
+          <Property Name="IdAdmin" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PasswordAD" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="EmailAD" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AspNetRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogin">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="Custumer">
+          <Key>
+            <PropertyRef Name="IdCustumer" />
+          </Key>
+          <Property Name="IdCustumer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullNameCustumer" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfBirth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tours" Relationship="Self.FK_Tour_Custumer" FromRole="Custumer" ToRole="Tour" />
+        </EntityType>
+        <EntityType Name="DetailTour">
+          <Key>
+            <PropertyRef Name="IdContact" />
+            <PropertyRef Name="IdTour" />
+          </Key>
+          <Property Name="IdContact" Type="Int32" Nullable="false" />
+          <Property Name="IdTour" Type="Int32" Nullable="false" />
+          <Property Name="RegistrationDate" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Payments" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentTerm" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="InfoContact" Relationship="Self.FK_DetailTour_InfoContact" FromRole="DetailTour" ToRole="InfoContact" />
+          <NavigationProperty Name="Tour" Relationship="Self.FK_DetailTour_Tour" FromRole="DetailTour" ToRole="Tour" />
+        </EntityType>
+        <EntityType Name="InfoContact">
+          <Key>
+            <PropertyRef Name="IdContact" />
+          </Key>
+          <Property Name="IdContact" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="CustumersNumber" Type="Int32" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DetailTours" Relationship="Self.FK_DetailTour_InfoContact" FromRole="InfoContact" ToRole="DetailTour" />
+        </EntityType>
+        <EntityType Name="Popular">
+          <Key>
+            <PropertyRef Name="IdPopular" />
+          </Key>
+          <Property Name="IdPopular" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdTour" Type="Int32" />
+          <NavigationProperty Name="Tour" Relationship="Self.FK_Popular_Tour" FromRole="Popular" ToRole="Tour" />
+        </EntityType>
+        <EntityType Name="Tour">
+          <Key>
+            <PropertyRef Name="IdTour" />
+          </Key>
+          <Property Name="IdTour" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TitleTour" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DescTour" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImageTour" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="StartingGate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="StartTour" Type="DateTime" Precision="0" />
+          <Property Name="TimeTour" Type="Int32" />
+          <Property Name="Hotel" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Vehicle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LuotView" Type="Int32" />
+          <Property Name="IdCustumer" Type="Int32" />
+          <Property Name="PriceTour" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="Custumer" Relationship="Self.FK_Tour_Custumer" FromRole="Tour" ToRole="Custumer" />
+          <NavigationProperty Name="DetailTours" Relationship="Self.FK_DetailTour_Tour" FromRole="Tour" ToRole="DetailTour" />
+          <NavigationProperty Name="Populars" Relationship="Self.FK_Popular_Tour" FromRole="Tour" ToRole="Popular" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tour_Custumer">
+          <End Role="Custumer" Type="Self.Custumer" Multiplicity="0..1" />
+          <End Role="Tour" Type="Self.Tour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Custumer">
+              <PropertyRef Name="IdCustumer" />
+            </Principal>
+            <Dependent Role="Tour">
+              <PropertyRef Name="IdCustumer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetailTour_InfoContact">
+          <End Role="InfoContact" Type="Self.InfoContact" Multiplicity="1" />
+          <End Role="DetailTour" Type="Self.DetailTour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InfoContact">
+              <PropertyRef Name="IdContact" />
+            </Principal>
+            <Dependent Role="DetailTour">
+              <PropertyRef Name="IdContact" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetailTour_Tour">
+          <End Role="Tour" Type="Self.Tour" Multiplicity="1" />
+          <End Role="DetailTour" Type="Self.DetailTour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tour">
+              <PropertyRef Name="IdTour" />
+            </Principal>
+            <Dependent Role="DetailTour">
+              <PropertyRef Name="IdTour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Popular_Tour">
+          <End Role="Tour" Type="Self.Tour" Multiplicity="0..1" />
+          <End Role="Popular" Type="Self.Popular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tour">
+              <PropertyRef Name="IdTour" />
+            </Principal>
+            <Dependent Role="Popular">
+              <PropertyRef Name="IdTour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="DulichEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admins" EntityType="Self.Admin" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+          <EntitySet Name="Custumers" EntityType="Self.Custumer" />
+          <EntitySet Name="DetailTours" EntityType="Self.DetailTour" />
+          <EntitySet Name="InfoContacts" EntityType="Self.InfoContact" />
+          <EntitySet Name="Populars" EntityType="Self.Popular" />
+          <EntitySet Name="Tours" EntityType="Self.Tour" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tour_Custumer" Association="Self.FK_Tour_Custumer">
+            <End Role="Custumer" EntitySet="Custumers" />
+            <End Role="Tour" EntitySet="Tours" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetailTour_InfoContact" Association="Self.FK_DetailTour_InfoContact">
+            <End Role="InfoContact" EntitySet="InfoContacts" />
+            <End Role="DetailTour" EntitySet="DetailTours" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetailTour_Tour" Association="Self.FK_DetailTour_Tour">
+            <End Role="Tour" EntitySet="Tours" />
+            <End Role="DetailTour" EntitySet="DetailTours" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Popular_Tour" Association="Self.FK_Popular_Tour">
+            <End Role="Tour" EntitySet="Tours" />
+            <End Role="Popular" EntitySet="Populars" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DulichModelStoreContainer" CdmEntityContainer="DulichEntities1">
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="DulichModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="IdAdmin" ColumnName="IdAdmin" />
+                <ScalarProperty Name="PasswordAD" ColumnName="PasswordAD" />
+                <ScalarProperty Name="EmailAD" ColumnName="EmailAD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="DulichModel.AspNetRole">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="DulichModel.AspNetUserClaim">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="DulichModel.AspNetUserLogin">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="DulichModel.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Custumers">
+            <EntityTypeMapping TypeName="DulichModel.Custumer">
+              <MappingFragment StoreEntitySet="Custumer">
+                <ScalarProperty Name="IdCustumer" ColumnName="IdCustumer" />
+                <ScalarProperty Name="FullNameCustumer" ColumnName="FullNameCustumer" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DetailTours">
+            <EntityTypeMapping TypeName="DulichModel.DetailTour">
+              <MappingFragment StoreEntitySet="DetailTour">
+                <ScalarProperty Name="IdContact" ColumnName="IdContact" />
+                <ScalarProperty Name="IdTour" ColumnName="IdTour" />
+                <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Payments" ColumnName="Payments" />
+                <ScalarProperty Name="PaymentTerm" ColumnName="PaymentTerm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InfoContacts">
+            <EntityTypeMapping TypeName="DulichModel.InfoContact">
+              <MappingFragment StoreEntitySet="InfoContact">
+                <ScalarProperty Name="IdContact" ColumnName="IdContact" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="CustumersNumber" ColumnName="CustumersNumber" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Populars">
+            <EntityTypeMapping TypeName="DulichModel.Popular">
+              <MappingFragment StoreEntitySet="Popular">
+                <ScalarProperty Name="IdPopular" ColumnName="IdPopular" />
+                <ScalarProperty Name="IdTour" ColumnName="IdTour" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tours">
+            <EntityTypeMapping TypeName="DulichModel.Tour">
+              <MappingFragment StoreEntitySet="Tour">
+                <ScalarProperty Name="IdTour" ColumnName="IdTour" />
+                <ScalarProperty Name="TitleTour" ColumnName="TitleTour" />
+                <ScalarProperty Name="DescTour" ColumnName="DescTour" />
+                <ScalarProperty Name="ImageTour" ColumnName="ImageTour" />
+                <ScalarProperty Name="StartingGate" ColumnName="StartingGate" />
+                <ScalarProperty Name="StartTour" ColumnName="StartTour" />
+                <ScalarProperty Name="TimeTour" ColumnName="TimeTour" />
+                <ScalarProperty Name="Hotel" ColumnName="Hotel" />
+                <ScalarProperty Name="Vehicle" ColumnName="Vehicle" />
+                <ScalarProperty Name="LuotView" ColumnName="LuotView" />
+                <ScalarProperty Name="IdCustumer" ColumnName="IdCustumer" />
+                <ScalarProperty Name="PriceTour" ColumnName="PriceTour" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="DulichModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

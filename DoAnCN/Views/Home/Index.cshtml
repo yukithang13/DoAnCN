@@ -1,4 +1,8 @@
-﻿<section class="home" id="home" >
+﻿@model IEnumerable<DoAnCN.Models.Tour>
+
+
+
+<section class="home" id="home">
     <div class="max-width">
         <div class="home-content">
             <div class="text-1">VietNam – the heart of Asia</div>
@@ -10,48 +14,59 @@
         </div>
     </div>
 </section>
-<div class="container h-100">
-    <div class="d-flex justify-content-center h-100">
-        <div class="searchbar">
-            <input class="search_input" type="text" name="" placeholder="Search...">
-            <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+<h3 class="title-product-1 "> Popular Display</h3>
+<div class="header-1">
+    <section class="hero-section" id="popular">
+
+        <div class="card-grid">
+            @foreach (var item in Model)
+            {
+                <a class="card-1" href="#">
+                    <div class="card__background" style="background-image: url(@item.ImageTour)"></div>
+                    <div class="card__content">
+                        <p class="card__category">@item.TitleTour</p>
+                        <h3 class="card__heading">@item.DescTour</h3>
+                    </div>
+                </a>
+            }
+
+        </div>
+
+
+    </section>
+
+  </div>
+<div class="testimonial-container">
+    <div class="progress-bar"></div>
+    <div class="fas fa-quote-left fa-quote"></div>
+    <div class="fas fa-quote-right fa-quote"></div>
+    <p class="testimonial">
+        I've worked with literally hundreds of HTML/CSS developers and I have to
+        say the top spot goes to this guy. This guy is an amazing developer. He
+        stresses on good, clean code and pays heed to the details. I love
+        developers who respect each and every aspect of a throughly thought out
+        design and do their best to put it in code. He goes over and beyond and
+        transforms ART into PIXELS - without a glitch, every time.
+    </p>
+    <div class="user">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=707b9c33066bf8808c934c8ab394dff6"
+             alt="user"
+             class="user-image" />
+        <div class="user-details">
+            <h4 class="username">Miyah Myles</h4>
+            <p class="role">Marketing</p>
         </div>
     </div>
 </div>
-<div class="header-1">
-    <section id="popular">
-        <div class="container-1">
-            <div class="small-container">
-                <h2 class="title-prodcut"> Products Display</h2>
-                <div class="row-1">
-                    <div class="col-4">
-                        <img src="~/Content/images/2.jpg">
-                        <h4>Red Polo Collar T-Shirt</h4>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-o"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ------------------------ -->
-
-        </div>
-    </section>
-</div>
-
 <script>
 
-    $(document).ready(function() {
-        $('.home-btn .home-btn-b').on('click', function(event){
+    $(document).ready(function () {
+        $('.home-btn .home-btn-b').on('click', function (event) {
             event.preventDefault();
             var sectionID = $(this).attr("href");
             scrollToID(sectionID, 750);
         });
 
-       
-        });
+    });
+
 </script>

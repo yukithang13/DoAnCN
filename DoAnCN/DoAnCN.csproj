@@ -199,25 +199,59 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Models\Admin.cs" />
-    <Compile Include="Models\AspNetRole.cs" />
-    <Compile Include="Models\AspNetUser.cs" />
-    <Compile Include="Models\AspNetUserClaim.cs" />
-    <Compile Include="Models\AspNetUserLogin.cs" />
-    <Compile Include="Models\Custumer.cs" />
+    <Compile Include="Models\Admin.cs">
+      <DependentUpon>TravelConTextDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetRole.cs">
+      <DependentUpon>TravelConTextDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUser.cs">
+      <DependentUpon>TravelConTextDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserClaim.cs">
+      <DependentUpon>TravelConTextDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserLogin.cs">
+      <DependentUpon>TravelConTextDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Custumer.cs">
+      <DependentUpon>TravelConTextDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Data\PopularBUS.cs" />
     <Compile Include="Models\Data\TourBUS.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\DetailTour.cs" />
+    <Compile Include="Models\DetailTour.cs">
+      <DependentUpon>TravelConTextDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\InfoContact.cs" />
+    <Compile Include="Models\InfoContact.cs">
+      <DependentUpon>TravelConTextDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Popular.cs" />
-    <Compile Include="Models\Tour.cs" />
-    <Compile Include="Models\TravelContext.cs" />
+    <Compile Include="Models\Popular.cs">
+      <DependentUpon>TravelConTextDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tour.cs">
+      <DependentUpon>TravelConTextDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TravelConTextDb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TravelConTextDb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TravelConTextDb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TravelConTextDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TravelConTextDb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TravelConTextDb.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -1887,8 +1921,10 @@
     <Content Include="Content\images\cau.jpg" />
     <Content Include="Content\images\condao.jpg" />
     <Content Include="Content\images\contact.svg" />
+    <Content Include="Content\images\dalat.jpg" />
     <Content Include="Content\images\daobinhhung.jpg" />
     <Content Include="Content\images\dongphongnha.jpg" />
+    <Content Include="Content\images\footer_bg.jpg" />
     <Content Include="Content\images\hobabe.jpg" />
     <Content Include="Content\images\hue.jpg" />
     <Content Include="Content\images\kyco.jpg" />
@@ -1898,18 +1934,35 @@
     <Content Include="Content\images\longxuyen.jpg" />
     <Content Include="Content\images\mientay.jpg" />
     <Content Include="Content\images\mytho.jpg" />
+    <Content Include="Content\images\nguhanh.jpg" />
     <Content Include="Content\images\phucuoc.jpg" />
+    <Content Include="Content\images\sapa.jpg" />
     <Content Include="Content\images\travel-1.svg" />
     <Content Include="Content\images\travel-2.svg" />
     <Content Include="Content\images\truongmekong.jpg" />
+    <Content Include="Content\images\vungtau.jpg" />
     <Content Include="Content\js\datatables-simple-demo.js" />
     <Content Include="Content\js\scripts.js" />
     <Content Include="Content\login.css" />
+    <Content Include="Content\Slick\ajax-loader.gif" />
+    <Content Include="Content\Slick\fonts\slick.svg" />
+    <Content Include="Content\Slick\slick-theme.css" />
+    <Content Include="Content\Slick\slick.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\tourCard.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Models\TravelConTextDb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TravelConTextDb.edmx</DependentUpon>
+      <LastGenOutput>TravelConTextDb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\TravelConTextDb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TravelConTextDb.edmx</DependentUpon>
+      <LastGenOutput>TravelConTextDb.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\fontawesome-free-5.15.4-web\less\brands.less" />
@@ -1971,6 +2024,18 @@
     <Content Include="Areas\Admin\Views\Admin\Homea.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\Login.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\Register.cshtml" />
+    <EntityDeploy Include="Models\TravelConTextDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TravelConTextDb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\TravelConTextDb.edmx.diagram">
+      <DependentUpon>TravelConTextDb.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\Slick\slick.scss" />
+    <Content Include="Content\Slick\slick-theme.scss" />
+    <Content Include="Content\Slick\fonts\slick.woff" />
+    <Content Include="Content\Slick\fonts\slick.ttf" />
+    <Content Include="Content\Slick\fonts\slick.eot" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -1983,6 +2048,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Js.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Slick\slick.js" />
+    <Content Include="Scripts\Slick\slick.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2018,6 +2085,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Ct.cshtml" />
     <Content Include="Views\Home\Tour.cshtml" />
+    <Content Include="Views\Home\TourInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -218,7 +218,6 @@ section {
     height: 100vh;
     min-height: 500px;
     background-size: cover;
-    background-attachment: fixed;
     position: relative;
     overflow: hidden;
 }
@@ -675,6 +674,16 @@ h2.title-product {
     padding: 1% 0 1% 4%;
 }
 
+h3.title-product-1 {
+    margin: 0;
+    width: 100%;
+    font-weight: 700;
+    padding: 17px;
+    background-image: linear-gradient( 15deg, #0f4667 0%, #2a6973 150%);
+    color: aqua;
+    text-align:center;
+}
+
 
 
 /*gan footer*/
@@ -892,4 +901,215 @@ img.about-img-1 {
     font-weight: 700;
     line-height: 3rem;
     margin: 1rem;
+}
+
+
+
+
+
+.testimonial-container {
+    background-color: #476ce4;
+    color: #fff;
+    border-radius: 15px;
+    margin: 20px auto;
+    padding: 50px 80px;
+    max-width: 768px;
+    position: relative;
+    font-family: cursive;
+}
+
+.fa-quote {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 28px;
+    position: absolute;
+    top: 70px;
+}
+
+.fa-quote-left {
+    left: 40px;
+}
+
+.fa-quote-right {
+    right: 40px;
+}
+
+.testimonial {
+    line-height: 28px;
+    text-align: justify;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .user .user-image {
+        border-radius: 50%;
+        height: 75px;
+        width: 75px;
+        object-fit: cover;
+    }
+
+    .user .user-details {
+        margin-left: 10px;
+    }
+
+    .user .username {
+        margin: 0;
+    }
+
+    .user .role {
+        font-weight: normal;
+        margin: 10px 0;
+    }
+
+.progress-bar {
+    background-color: #fff;
+    height: 4px;
+    width: 100%;
+    transform-origin: left;
+    animation: grow 10s linear infinite;
+}
+
+@keyframes grow {
+    0% {
+        transform: scaleX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonial-container {
+        padding: 20px 30px;
+    }
+
+    .fa-quote {
+        display: none;
+    }
+}
+
+/*tour-info*/
+i.fas.fa-heart {
+    color: red;
+    font-size: 3rem;
+}
+label.view-tour {
+    font-size: x-large;
+}
+a.add-to-cart{
+    background-color: red;
+    color: ivory;
+    padding: 3% 6%;
+    border-radius: 2rem;
+}
+a.add-to-group {
+    background-color: darkslateblue;
+    color: ivory;
+    padding: 3% 6%;
+    border-radius: 2rem;
+}
+
+.tour-Info {
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+    background-color: gainsboro;
+}
+
+img.Info-img {
+    padding: 2% 0;
+    width: 100%;
+    border-radius: 5rem;
+    height: 80vh;
+    
+}
+
+.group-services {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    border-bottom: 1px solid #7d8fab;
+    padding-bottom: 20px;
+    margin-bottom: 35px;
+}
+
+p.s-title-03.tour-des, p-thamquan {
+    text-align: justify;
+}
+
+.group-contact {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #4d4aef;
+    border-radius: 14px;
+    max-width: 350px;
+
+}
+
+.box-order {
+    padding: 15px 30px;
+    background: #fff;
+    border-radius: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.group-contact .phone {
+    background: #4d4aef;
+    border-radius: 10px;
+    height: 51px;
+    width: 183px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.group-contact .mail {
+    border-radius: 10px;
+    height: 50px;
+    width: 183px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #4d4aef;
+}
+
+i.fas.fa-phone-volume {
+    font-size: 170%;
+    padding-right: 5%;
+}
+
+i.far.fa-envelope {
+    font-size: 170%;
+    padding-right: 5%;
+}
+
+.group-price {
+    color: red;
+    font-size: xx-large;
 }

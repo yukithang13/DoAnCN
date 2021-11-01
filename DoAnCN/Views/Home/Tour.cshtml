@@ -12,25 +12,8 @@
 <div class="contact-1">
 
 </div>
+<!-- Single Card -->
 
-<section class="hero-section">
-
-    <div class="card-grid">
-        @foreach (var item in Model)
-        {
-            <a class="card-1" href="#">
-                <div class="card__background" style="background-image: url(@item.ImageTour)"></div>
-                <div class="card__content">
-                    <p class="card__category">@item.TitleTour</p>
-                    <h3 class="card__heading">@item.DescTour</h3>
-                </div>
-            </a>
-        }
-
-    </div>
-
-
-</section>
 
 <div class="container h-100">
     <div class="d-flex justify-content-center h-100">
@@ -55,10 +38,13 @@
                     <p class="card-text">
                         @item.DescTour
                     </p>
-                    <button class="card-btn">Visit <span>&rarr;</span></button>
+
+
                 </div>
+                <div class="card-btn">@Html.ActionLink("Detail", "TourInfo", new { id = item.IdTour })</div>
             </div>
         </div>
+
     }
 </div>
 
@@ -76,6 +62,9 @@
             });
         });
     });
+    
+    
 </script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 
