@@ -36,7 +36,7 @@ namespace DoAnCN.Models
         [Display(Name = "Remember this browser?")]
         public bool RememberBrowser { get; set; }
 
-        public bool RememberMe { get; set; }
+        public bool RememberMe { get; set; }    
     }
 
     public class ForgotViewModel

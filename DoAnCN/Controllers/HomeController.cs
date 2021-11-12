@@ -39,7 +39,7 @@ namespace DoAnCN.Controllers
             return View();
         }
 
-        DulichEntities1 db = new DulichEntities1();
+        DulichEntities6 db = new DulichEntities6();
         public ActionResult Tour()
         {
             int page = 1; int pagesize = 100;
@@ -47,6 +47,14 @@ namespace DoAnCN.Controllers
             var db = TourBUS.DanhSach().ToPagedList(page, pagesize);
             return View(db);
             
+        }
+        public ActionResult Tour123()
+        {
+            int page = 1; int pagesize = 100;
+
+            var db = TourBUS.DanhSach().ToPagedList(page, pagesize);
+            return View(db);
+
         }
 
 
@@ -75,24 +83,38 @@ namespace DoAnCN.Controllers
 
         }
 
+        public ActionResult Info()
+        {
+            var employeeViewModel = new TourBUS
+            {
+                Tours = db.Tours.ToList(),
+                
+                Admin = db.AdminTs.ToList()
+            };
+            return View(employeeViewModel);
+        }
 
 
-        //[HttpGet]
-        //public ActionResult Tour(Tour tour)
+        public ActionResult Booking()
+        {
+            return View();
+        }
+
+        //public JsonResult LoadImages(string id)
         //{
-        //    Tour tourdb = new Tour();
-        //    tourdb.TitleTour = tour.TitleTour;
-        //    tour.DescTour = tourdb.DescTour;
-        //    tour.ImageTour = tourdb.ImageTour;
-        //    tour.StartingGate = tourdb.StartingGate;
-        //    tour.StartTour = tourdb.StartTour;
-        //    tour.TimeTour = tourdb.TimeTour;
-        //    tour.Hotel = tourdb.Hotel;
-        //    tour.Vehicle = tourdb.Vehicle;
-        //    tour.IdCustumer = tourdb.IdCustumer;
-        //    tour.PriceTour = tourdb.PriceTour;
+        //    var product = TourBUS.ChiTiet(id);
+        //    var images = product.;
+        //    XElement xImages = XElement.Parse(images);
+        //    List<string> listImageReturn = new List<string>();
 
-        //    return View();
+        //    foreach (XElement element in xImages.Elements())
+        //    {
+        //        listImageReturn.Add(element.Value);
+        //    }
+        //    return Json(new
+        //    {
+        //        data = listImageReturn
+        //    }, JsonRequestBehavior.AllowGet);
         //}
     }
 }

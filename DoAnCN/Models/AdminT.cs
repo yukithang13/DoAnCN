@@ -12,11 +12,9 @@ namespace DoAnCN.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Popular
+    public partial class AdminT
     {
-        public int IdPopular { get; set; }
-        public Nullable<int> IdTour { get; set; }
-    
-        public virtual Tour Tour { get; set; }
+        public string PasswordAD { get; set; }
+        public string EmailAD { get; set; }
     }
 }

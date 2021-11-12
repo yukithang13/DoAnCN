@@ -5,11 +5,8 @@ using System.Web;
 
 namespace DoAnCN.Models.Data
 {
-    public class PopularBUS
+    public class AdminTBUS
     {
-        public IEnumerable<Tour> Tours { get; set; }
         
-
-       
     }
 }

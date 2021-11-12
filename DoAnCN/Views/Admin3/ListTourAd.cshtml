@@ -1,0 +1,99 @@
+﻿@model IEnumerable<DoAnCN.Models.Tour>
+
+@{
+    ViewBag.Title = "ListTourAd";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>ListTourAd</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateTour")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TitleTour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescTour)
+        </th>
+        <th>
+            Image
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartingGate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartTour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeTour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hotel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vehicle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LuotView)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PriceTour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Visit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Food)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TitleTour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescTour)
+        </td>
+        <td>
+            <img src="@item.ImageTour" width="150" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartingGate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartTour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeTour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hotel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vehicle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LuotView)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PriceTour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Visit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Food)
+        </td>
+        <td>
+            @Html.ActionLink("EditTour", "EditTour", new { id=item.IdTour }) |
+            @Html.ActionLink("DeleteTour", "DeleteTour", new { id=item.IdTour })
+        </td>
+    </tr>
+}
+
+</table>

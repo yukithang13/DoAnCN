@@ -195,63 +195,62 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminVController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Admin3Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Models\Admin.cs">
-      <DependentUpon>TravelConTextDb.tt</DependentUpon>
+    <Compile Include="Models\AdminT.cs">
+      <DependentUpon>TravelDbContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Data\AdminTBUS.cs" />
     <Compile Include="Models\AspNetRole.cs">
-      <DependentUpon>TravelConTextDb.tt</DependentUpon>
+      <DependentUpon>TravelDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetUser.cs">
-      <DependentUpon>TravelConTextDb.tt</DependentUpon>
+      <DependentUpon>TravelDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetUserClaim.cs">
-      <DependentUpon>TravelConTextDb.tt</DependentUpon>
+      <DependentUpon>TravelDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetUserLogin.cs">
-      <DependentUpon>TravelConTextDb.tt</DependentUpon>
+      <DependentUpon>TravelDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Custumer.cs">
-      <DependentUpon>TravelConTextDb.tt</DependentUpon>
+      <DependentUpon>TravelDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DetailTour.cs">
+      <DependentUpon>TravelDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InfoContact.cs">
+      <DependentUpon>TravelDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Data\PopularBUS.cs" />
+    <Compile Include="Models\Tour.cs">
+      <DependentUpon>TravelDbContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Data\TourBUS.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\DetailTour.cs">
-      <DependentUpon>TravelConTextDb.tt</DependentUpon>
+    <Compile Include="Models\TravelDbContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TravelDbContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TravelDbContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TravelDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TravelDbContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TravelDbContext.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\InfoContact.cs">
-      <DependentUpon>TravelConTextDb.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Popular.cs">
-      <DependentUpon>TravelConTextDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Tour.cs">
-      <DependentUpon>TravelConTextDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TravelConTextDb.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TravelConTextDb.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TravelConTextDb.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TravelConTextDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TravelConTextDb.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TravelConTextDb.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -1953,15 +1952,15 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\TravelConTextDb.Context.tt">
+    <Content Include="Models\TravelDbContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TravelConTextDb.edmx</DependentUpon>
-      <LastGenOutput>TravelConTextDb.Context.cs</LastGenOutput>
+      <DependentUpon>TravelDbContext.edmx</DependentUpon>
+      <LastGenOutput>TravelDbContext.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\TravelConTextDb.tt">
+    <Content Include="Models\TravelDbContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TravelConTextDb.edmx</DependentUpon>
-      <LastGenOutput>TravelConTextDb.cs</LastGenOutput>
+      <DependentUpon>TravelDbContext.edmx</DependentUpon>
+      <LastGenOutput>TravelDbContext.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -2021,21 +2020,22 @@
     <Content Include="Content\fontawesome-free-5.15.4-web\webfonts\fa-solid-900.woff2" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\Admin.cshtml" />
-    <Content Include="Areas\Admin\Views\Admin\Homea.cshtml" />
-    <Content Include="Areas\Admin\Views\Admin\Login.cshtml" />
-    <Content Include="Areas\Admin\Views\Admin\Register.cshtml" />
-    <EntityDeploy Include="Models\TravelConTextDb.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TravelConTextDb.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\TravelConTextDb.edmx.diagram">
-      <DependentUpon>TravelConTextDb.edmx</DependentUpon>
-    </Content>
+    <Content Include="Areas\Admin\Views\AdminV\Homea.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminV\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminV\Register.cshtml" />
     <Content Include="Content\Slick\slick.scss" />
     <Content Include="Content\Slick\slick-theme.scss" />
     <Content Include="Content\Slick\fonts\slick.woff" />
     <Content Include="Content\Slick\fonts\slick.ttf" />
     <Content Include="Content\Slick\fonts\slick.eot" />
+    <Content Include="Areas\Admin\Views\AdminV\LoginV.cshtml" />
+    <EntityDeploy Include="Models\TravelDbContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TravelDbContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\TravelDbContext.edmx.diagram">
+      <DependentUpon>TravelDbContext.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2086,11 +2086,23 @@
     <Content Include="Views\Home\Ct.cshtml" />
     <Content Include="Views\Home\Tour.cshtml" />
     <Content Include="Views\Home\TourInfo.cshtml" />
+    <Content Include="Views\Home\Info.cshtml" />
+    <Content Include="Views\Admin3\Login.cshtml" />
+    <Content Include="Views\Shared\AdminLayout.cshtml" />
+    <Content Include="Views\Admin3\HomeAdmin.cshtml" />
+    <Content Include="Views\Admin3\EditTour.cshtml" />
+    <Content Include="Views\Admin3\CreateTour.cshtml" />
+    <Content Include="Views\Admin3\DeleteTour.cshtml" />
+    <Content Include="Views\Admin3\ListTourAd.cshtml" />
+    <Content Include="Views\Admin3\EditTourTe.cshtml" />
+    <Content Include="Views\Home\Tour123.cshtml" />
+    <Content Include="Views\Home\Booking.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Views\Home\" />
+    <Folder Include="FileImages\FileImages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -8,17 +8,23 @@ namespace DoAnCN.Areas.Admin
         {
             get 
             {
-                return "Admin";
+                return "AdminV";
             }
         }
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {
+            
+           
+            
             context.MapRoute(
                 "Admin_default",
-                "Admin/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                "Admin/{ controller}/{ action}/{ id}",
+                new { controller = "Dashboard", action = "Homea", id = UrlParameter.Optional }
             );
         }
+       
+
+
     }
 }

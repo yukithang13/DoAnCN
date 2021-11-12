@@ -13,10 +13,10 @@ namespace DoAnCN.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DulichEntities1 : DbContext
+    public partial class DulichEntities6 : DbContext
     {
-        public DulichEntities1()
-            : base("name=DulichEntities1")
+        public DulichEntities6()
+            : base("name=DulichEntities6")
         {
         }
     
@@ -25,7 +25,7 @@ namespace DoAnCN.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Admin> Admins { get; set; }
+        public virtual DbSet<AdminT> AdminTs { get; set; }
         public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
@@ -33,7 +33,6 @@ namespace DoAnCN.Models
         public virtual DbSet<Custumer> Custumers { get; set; }
         public virtual DbSet<DetailTour> DetailTours { get; set; }
         public virtual DbSet<InfoContact> InfoContacts { get; set; }
-        public virtual DbSet<Popular> Populars { get; set; }
         public virtual DbSet<Tour> Tours { get; set; }
     }
 }

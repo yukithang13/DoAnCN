@@ -1,0 +1,72 @@
+﻿@model DoAnCN.Models.AdminT
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ĐĂNG NHẬP</title>
+
+
+
+
+    <!-- Custom styles for this template-->
+
+
+</head>
+
+<body>
+
+    <div class="loginn">
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+                <!-- Tabs Titles -->
+                <h2 class="active"> Sign In </h2>
+                <h2 class="inactive underlineHover">Sign Up </h2>
+
+                <!-- Outer Row -->
+
+                <div class="form-bottom">
+                    @using (Html.BeginForm())
+                    {
+                @Html.ValidationSummary(true)
+                <div class="form-group">
+                    <label class="sr-only" for="form-username">User: </label>
+                    <input type="text" name="txtusername" placeholder="Nhập Tên Tài Khoản" class="form-username form-control fadeIn second input-login" id="form-username" />
+                    @ViewData["Loi1"]
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="form-password">Passwork: </label>
+                    <input type="password" name="txtpassword" placeholder="Nhập Mật Khẩu" class="form-password form-control fadeIn third input-login" id="form-password" />
+                    @ViewData["Loi2"]
+                </div>
+                <button type="submit" class="btn">ĐĂNG NHẬP</button>
+            }
+
+                </div>
+
+
+
+            </div>
+
+            <!-- Bootstrap core JavaScript-->
+            <div id="formFooter">
+                <a class="underlineHover" href="#">Forgot Password?</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+﻿@model DoAnCN.Models.Tour
+
+@{
+    ViewBag.Title = "DeleteTour";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>DeleteTour</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Tour</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TitleTour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TitleTour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescTour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescTour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageTour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageTour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartingGate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartingGate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartTour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartTour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeTour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeTour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hotel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hotel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LuotView)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LuotView)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PriceTour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PriceTour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Visit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Visit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Food)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Food)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "ListTour")
+        </div>
+    }
+</div>

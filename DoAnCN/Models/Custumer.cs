@@ -14,18 +14,12 @@ namespace DoAnCN.Models
     
     public partial class Custumer
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Custumer()
-        {
-            this.Tours = new HashSet<Tour>();
-        }
-    
         public int IdCustumer { get; set; }
         public string FullNameCustumer { get; set; }
         public string DateOfBirth { get; set; }
         public string Sex { get; set; }
+        public int IdTour { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tour> Tours { get; set; }
+        public virtual Tour Tour { get; set; }
     }
 }

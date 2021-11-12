@@ -17,8 +17,8 @@ namespace DoAnCN.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Tour()
         {
+            this.Custumers = new HashSet<Custumer>();
             this.DetailTours = new HashSet<DetailTour>();
-            this.Populars = new HashSet<Popular>();
         }
     
         public int IdTour { get; set; }
@@ -31,13 +31,13 @@ namespace DoAnCN.Models
         public string Hotel { get; set; }
         public string Vehicle { get; set; }
         public Nullable<int> LuotView { get; set; }
-        public Nullable<int> IdCustumer { get; set; }
         public Nullable<decimal> PriceTour { get; set; }
+        public string Visit { get; set; }
+        public string Food { get; set; }
     
-        public virtual Custumer Custumer { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Custumer> Custumers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetailTour> DetailTours { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Popular> Populars { get; set; }
     }
 }
