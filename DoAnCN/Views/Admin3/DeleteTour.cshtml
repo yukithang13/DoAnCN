@@ -13,6 +13,13 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.IdTour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdTour)
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.TitleTour)
         </dt>
 
@@ -33,7 +40,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ImageTour)
+            <img class="Info-img" src="@Url.Content("~/Content/images/"+Model.ImageTour)" width="200" />
         </dd>
 
         <dt>
@@ -115,7 +122,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "ListTour")
+            @Html.ActionLink("Back to List", "ListTourAd")
         </div>
     }
 </div>

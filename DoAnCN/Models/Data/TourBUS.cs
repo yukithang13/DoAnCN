@@ -37,41 +37,12 @@ namespace DoAnCN.Models.Data
             return db1.Tours.SqlQuery("select Top 4 * from Tour where LuotView > '100'   ");
         }
 
-        //public static void InsertSP(Tour sp)
-        //{
-        //    var db = new TravelDbContext();
-        //    db.Tours.Add(sp);
-        //}
- 
-
-        ////----------------------------------update images---------------
-        //public static void UpdateImages(string id, string images)
-        //{
-        //    var db = new TravelDbContext();
-        //    var sp = ChiTiet(id);
-        //    sp.ImageTour = images;
-        //    db.Tours.Add(sp);
-        //}
-        ////------------------------Loai ảnh đại diện cho hình ảnh-------------
-        //public static string LoadAvartaImg(string id)
-        //{
-        //    var sp = ChiTiet(id);
-
-        //    var product = ChiTiet(id);
-        //    var images = product.ImageTour;
-        //    XElement xImages = XElement.Parse(images);
-        //    List<string> listImageReturn = new List<string>();
-
-        //    foreach (XElement element in xImages.Elements())
-        //    {
-        //        listImageReturn.Add(element.Value);
-        //    }
-        //    if (listImageReturn.Count() == 0)
-        //    {
-        //        return "/Asset/data/images/default.png";
-        //    }
-        //    return listImageReturn.ElementAt(0).ToString();
-        //}
+        public static void InsertSP(Tour tour)
+        {
+            var db = new DulichEntities6();
+            db.Tours.Add(tour);
+            db.SaveChanges();
+        }
 
         public IEnumerable<Tour> Tours { get; set; }
         

@@ -15,6 +15,7 @@ function initMap() {
 }
 
 
+
 //slider
 const testimonialsContainer = document.querySelector(".testimonials-container");
 const testimonial = document.querySelector(".testimonial");
@@ -24,57 +25,69 @@ const role = document.querySelector(".role");
 
 const testimonials = [
     {
-        name: "Miyah Myles",
-        position: "Marketing",
+        name: "Thanh Hồng",
+        position: "",
         photo:
-            "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=707b9c33066bf8808c934c8ab394dff6",
+            "https://danongonline.com.vn/wp-content/uploads/2018/02/anh-girl-xinh-9-1.jpg",
         text:
-            "I've worked with literally hundreds of HTML/CSS developers and I have to say the top spot goes to this guy. This guy is an amazing developer. He stresses on good, clean code and pays heed to the details. I love developers who respect each and every aspect of a throughly thought out design and do their best to put it in code. He goes over and beyond and transforms ART into PIXELS - without a glitch, every time.",
+            "Dịch vụ chăm sóc khách hàng tốt. Sự đồng cảm, quan tâm tới khách hàng trong toàn bộ các giai đoạn trước, trong, sau khi họ sử dụng dịch vụ.",
     },
     {
-        name: "June Cha",
-        position: "Software Engineer",
-        photo: "https://randomuser.me/api/portraits/women/44.jpg",
+        name: "Bích Huyền",
+        position: "",
+        photo: "https://hoangdaokimgiap.vn/anh-gai-xinh/imager_11_8527_700.jpg",
         text:
-            "This guy is an amazing frontend developer that delivered the task exactly how we need it, do your self a favor and hire him, you will not be disappointed by the work delivered. He will go the extra mile to make sure that you are happy with your project. I will surely work again with him!",
+            "Cảnh quan môi trường và cơ sở vật chất tuyệt vời. Phong cảnh độc đáo, đa dạng.",
     },
     {
-        name: "Iida Niskanen",
-        position: "Data Entry",
-        photo: "https://randomuser.me/api/portraits/women/68.jpg",
+        name: "Thúy Hằng",
+        position: "",
+        photo: "https://itcafe.vn/wp-content/uploads/2021/01/anh-gai-xinh-2.jpg",
         text:
-            "This guy is a hard worker. Communication was also very good with him and he was very responsive all the time, something not easy to find in many freelancers. We'll definitely repeat with him.",
+            "Thức ăn ngon, hợp khẩu vị. Nhân viên có kiến thức về an toàn, an ninh và có kỹ năng quan sát.",
     },
     {
-        name: "Renee Sims",
-        position: "Receptionist",
-        photo: "https://randomuser.me/api/portraits/women/65.jpg",
+        name: "Cẩm Viên",
+        position: "",
+        photo: "https://4.bp.blogspot.com/-3gTX68tFh1I/WzjXo3ItQtI/AAAAAAAAwXM/c3CUimqg4D4U3-IoMzgksfjmEZxByIXIgCLcBGAs/s640/anh-hot-gril-lanh-lung-1.jpg",
         text:
-            "This guy does everything he can to get the job done and done right. This is the second time I've hired him, and I'll hire him again in the future.",
+            "Vui chơi giải trí phong phú, đa dạng. Tham quan vườn trái cây thú vị. Đặc sản phong phú, đa dạng.",
     },
     {
-        name: "Jonathan Nunfiez",
-        position: "Graphic Designer",
-        photo: "https://randomuser.me/api/portraits/men/43.jpg",
+        name: "Nguyễn Thị Thu",
+        position: "",
+        photo: "https://kenh14cdn.com/thumb_w/660/2019/3/24/5451948722551103147424772114672588939591680n-1553406715068621869667.jpg",
         text:
-            "I had my concerns that due to a tight deadline this project can't be done. But this guy proved me wrong not only he delivered an outstanding work but he managed to deliver 1 day prior to the deadline. And when I asked for some revisions he made them in MINUTES. I'm looking forward to work with him again and I totally recommend him. Thanks again!",
+            "Tôi đã từng đi du lịch rất nhiều nhưng công ty này làm tôi rất hài lòng từ thiết kế tour tới khách sạn ăn uống rất là được",
     },
     {
-        name: "Sasha Ho",
-        position: "Accountant",
+        name: "Phạm Anh Tuấn",
+        position: "",
         photo:
-            "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb",
+            "https://mrhanhphuc.com/uploaded/uploads/2017/09/cach-tao-dang-chup-anh-dep-cho-nam10.jpg",
         text:
-            "This guy is a top notch designer and front end developer. He communicates well, works fast and produces quality work. We have been lucky to work with him!",
+            "Tận tình, chu đáo từ ăn , chơi đến khách sạn , hướng dẫn viên thân thiện có kiến thức du lịch rất giỏi .",
     },
     {
-        name: "Veeti Seppanen",
-        position: "Director",
-        photo: "https://randomuser.me/api/portraits/men/97.jpg",
+        name: "Lê Vi",
+        position: "",
+        photo: "https://luv.vn/wp-content/uploads/2021/02/Hinh-anh-hot-girl-hoc-sinh-de-thuong-nhat-6.jpg",
         text:
-            "This guy is a young and talented IT professional, proactive and responsible, with a strong work ethic. He is very strong in PSD2HTML conversions and HTML/CSS technology. He is a quick learner, eager to learn new technologies. He is focused and has the good dynamics to achieve due dates and outstanding results.",
+            "Du lịch giá rẻ, hướng dẫn rất nhiệt tình thân thiện",
+    },
+    {
+        name: "Hoa Nhi",
+        position: "",
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4QQCo4hrKa1H09DC0isy1N2PCCOLrxVvkk2Cy_dwhH0cOvu68q0p-2QM1-vrv9xhP4_g&usqp=CAU",
+        text:
+            "Đã đi nhiều nơi, nhưng đây là lần đầu thấy HDV nhiệt tình, tận tâm với khách đến vậy. Cám ơn cty, cám ơn 2 anh em HDV, chúc cty ngày càng có nhiều HDV có tâm như thế, chúc 2 anh em HDV có nhiều sức khỏe, luôn giữ dc lửa nghề.",
     },
 ];
+
+
+
+
+
 
 let index = 1;
 
@@ -88,7 +101,7 @@ const updateTestimonial = () => {
     if (index > testimonials.length - 1) index = 0;
 };
 
-setInterval(updateTestimonial, 10000);
+setInterval(updateTestimonial, 5000);
 
 //change background
 function changeBg() {

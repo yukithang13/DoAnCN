@@ -219,6 +219,7 @@
     <Compile Include="Models\Custumer.cs">
       <DependentUpon>TravelDbContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Data\InfoBUS.cs" />
     <Compile Include="Models\DetailTour.cs">
       <DependentUpon>TravelDbContext.tt</DependentUpon>
     </Compile>
@@ -1910,22 +1911,34 @@
     <Content Include="Content\fontawesome-free-5.15.4-web\webfonts\fa-brands-400.svg" />
     <Content Include="Content\fontawesome-free-5.15.4-web\webfonts\fa-regular-400.svg" />
     <Content Include="Content\fontawesome-free-5.15.4-web\webfonts\fa-solid-900.svg" />
+    <Content Include="Content\images\10-6406.jpg" />
+    <Content Include="Content\images\167384503_1130315787447995_3395470336421030657_n.jpg" />
     <Content Include="Content\images\2.jpg" />
     <Content Include="Content\images\3.jpg" />
     <Content Include="Content\images\4.jpg" />
     <Content Include="Content\images\5.jpg" />
+    <Content Include="Content\images\636523987426013484_Capture4.png" />
     <Content Include="Content\images\about-us.jpg" />
+    <Content Include="Content\images\Alba-Wellness-Resort-Hue.jpg" />
+    <Content Include="Content\images\anh-dep-du-lich-viet-nam-vietnam-travel-ha-long-bay-02.jpg" />
     <Content Include="Content\images\bana.jpg" />
+    <Content Include="Content\images\bichhuyen.jpg" />
+    <Content Include="Content\images\camvien.jpg" />
     <Content Include="Content\images\cangio.jpg" />
     <Content Include="Content\images\cau.jpg" />
+    <Content Include="Content\images\cho-noi-cai-rang-du-ky.JPG" />
     <Content Include="Content\images\condao.jpg" />
     <Content Include="Content\images\contact.svg" />
     <Content Include="Content\images\dalat.jpg" />
     <Content Include="Content\images\daobinhhung.jpg" />
+    <Content Include="Content\images\dia-diem-du-lich-vung-tau-5.jpg" />
     <Content Include="Content\images\dongphongnha.jpg" />
+    <Content Include="Content\images\DU-LICH-DA-NANG-BA-NA_1418118039.jpg" />
     <Content Include="Content\images\footer_bg.jpg" />
     <Content Include="Content\images\hobabe.jpg" />
     <Content Include="Content\images\hue.jpg" />
+    <Content Include="Content\images\IMG_20180220_175454.jpg" />
+    <Content Include="Content\images\kinh-nghiem-du-lich-binh-hung-top.jpg" />
     <Content Include="Content\images\kyco.jpg" />
     <Content Include="Content\images\lacda.jpg" />
     <Content Include="Content\images\langgom.jpg" />
@@ -1934,15 +1947,28 @@
     <Content Include="Content\images\mientay.jpg" />
     <Content Include="Content\images\mytho.jpg" />
     <Content Include="Content\images\nguhanh.jpg" />
+    <Content Include="Content\images\photo-1519458498024-9448c70cbae7.jpg" />
+    <Content Include="Content\images\photo-1523466161097-31b21e3a660f.jpg" />
+    <Content Include="Content\images\photo-1590119329604-0c0caab2a4e6.jpg" />
+    <Content Include="Content\images\photo-1601108644994-1e450e786d3d.jpg" />
     <Content Include="Content\images\phucuoc.jpg" />
     <Content Include="Content\images\sapa.jpg" />
+    <Content Include="Content\images\Sunset-Sanato-Beach-Club.jpg" />
+    <Content Include="Content\images\tfd_210416043336_567365.jpg" />
+    <Content Include="Content\images\thanhhong.jpg" />
+    <Content Include="Content\images\thuyhang.jpg" />
+    <Content Include="Content\images\tiet-lo-lich-su-tuong-chua-kito-vua-o-vung-tau-15784-2.jpg" />
     <Content Include="Content\images\travel-1.svg" />
     <Content Include="Content\images\travel-2.svg" />
     <Content Include="Content\images\truongmekong.jpg" />
+    <Content Include="Content\images\vam-sat-can-gio-2.jpg" />
+    <Content Include="Content\images\VNMHUI15.jpg" />
+    <Content Include="Content\images\vt21.jpg" />
     <Content Include="Content\images\vungtau.jpg" />
     <Content Include="Content\js\datatables-simple-demo.js" />
     <Content Include="Content\js\scripts.js" />
     <Content Include="Content\login.css" />
+    <Content Include="Content\LoginAdmin.css" />
     <Content Include="Content\Slick\ajax-loader.gif" />
     <Content Include="Content\Slick\fonts\slick.svg" />
     <Content Include="Content\Slick\slick-theme.css" />
@@ -2090,12 +2116,10 @@
     <Content Include="Views\Admin3\Login.cshtml" />
     <Content Include="Views\Shared\AdminLayout.cshtml" />
     <Content Include="Views\Admin3\HomeAdmin.cshtml" />
-    <Content Include="Views\Admin3\EditTour.cshtml" />
     <Content Include="Views\Admin3\CreateTour.cshtml" />
     <Content Include="Views\Admin3\DeleteTour.cshtml" />
     <Content Include="Views\Admin3\ListTourAd.cshtml" />
     <Content Include="Views\Admin3\EditTourTe.cshtml" />
-    <Content Include="Views\Home\Tour123.cshtml" />
     <Content Include="Views\Home\Booking.cshtml" />
   </ItemGroup>
   <ItemGroup>

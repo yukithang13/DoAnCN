@@ -76,13 +76,21 @@ namespace DoAnCN.Controllers
         [HttpPost]
         public ActionResult CreateTour(Tour tourAd)
         {
-            
-            db.Tours.AddOrUpdate(tourAd);
-            db.SaveChanges();
-            return RedirectToAction("ListTour");
+            Tour tour = db.Tours.SingleOrDefault(p => p.IdTour == tourAd.IdTour);
+            if (tour == null)
+            {
+                db.Tours.Add(tourAd);
+                db.SaveChanges();
+
+            }
+           
+            return RedirectToAction("ListTourAd");
         }
-        public ActionResult EditTour(int id)
+
+
+        public ActionResult DeleteTour(int id)
         {
+
             Tour tour = db.Tours.SingleOrDefault(p => p.IdTour == id);
             if (tour == null)
             {
@@ -90,38 +98,21 @@ namespace DoAnCN.Controllers
             }
             return View(tour);
         }
-        [HttpPost, ActionName("EditTour")]
-        [ValidateAntiForgeryToken]
-        public ActionResult EditTour(Tour tourAd)
-        {
-            Tour tour = db.Tours.SingleOrDefault(p => p.IdTour == tourAd.IdTour);
-            if (tour != null)
-            {
-                db.Tours.AddOrUpdate(tourAd);
-                db.SaveChanges();
-                
-            }
-            return RedirectToAction("ListTour");
-        }
+        [HttpPost, ActionName("DeleteTour")]
 
-        public ActionResult DeleteTour(int id)
+        public ActionResult DeleteTour1(int id)
         {
 
             Tour tour = db.Tours.SingleOrDefault(p => p.IdTour == id);
-            return View(tour);
-        }
-        [HttpDelete]
-        public ActionResult DeleteTour(Tour tourAd)
-        {
-
-            Tour tour = db.Tours.SingleOrDefault(p => p.IdTour == tourAd.IdTour);
-            if (tour != null)
+            if(tour != null)
             {
                 db.Tours.Remove(tour);
                 db.SaveChanges();
-                return RedirectToAction("ListTour");
-            }
-            return View();
+            }    
+
+            
+
+            return RedirectToAction("ListTourAd");
 
         }
 
@@ -141,8 +132,6 @@ namespace DoAnCN.Controllers
             Tour tour = db.Tours.SingleOrDefault(p => p.IdTour == tourAd.IdTour);
             if (tour != null)
             {
-                
-               
                 
                 UpdateModel(tourAd);
                 db.Tours.AddOrUpdate(tourAd);

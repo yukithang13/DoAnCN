@@ -996,22 +996,38 @@ i.fas.fa-heart {
 label.view-tour {
     font-size: x-large;
 }
-a.add-to-cart{
+button.add-to-cart{
     background-color: red;
     color: ivory;
     padding: 3% 6%;
     border-radius: 2rem;
 }
+
+.text-booking {
+    color: ivory;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+span > a {
+    color: ivory;
+    text-decoration: none;
+    font-weight: 700;
+}
 a.add-to-group {
     background-color: darkslateblue;
     color: ivory;
-    padding: 3% 6%;
+    padding: 4% 6%;
     margin-left: 3%;
     border-radius: 2rem;
 }
 
-.a.add-to-group:hover{
-    
+
+
+
+.add-to-group:hover {
+    color: black;
+    background-color: white;
 }
 
 .tour-Info {
@@ -1472,7 +1488,6 @@ img.img-fluid {
     justify-content: space-between;
     background: #f9f9f9;
     border-radius: 10px;
-    padding: 24px;
 }
 
     .block .group-info > * {

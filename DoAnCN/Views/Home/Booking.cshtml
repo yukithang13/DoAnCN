@@ -1,4 +1,4 @@
-﻿
+﻿@model DoAnCN.Models.Tour
 @{
     ViewBag.Title = "Booking";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -14,26 +14,26 @@
             <div class="product-1">
                 <div class="product-image-1">
                     <div class="image-booking">
-                        <img src="~/Content/images/about-us.jpg" class="img-fluid" alt="image">
+                        <img class="img-fluid" src="@Url.Content("~/Content/images/"+Model.ImageTour)" />
                     </div>
                 </div>
                 <div class="product-content-1">
                     <div class="s-rate">
                         <div class="s-comment">
-                            <span>358 quan tâm</span>
+                            <span>@Html.DisplayFor(model => model.LuotView) quan tâm</span>
                         </div>
                     </div>
                     <div class="ticket-no-wrap d-lg-none">
                         <div class="ticket-no">
-                            <i class="icon icon--ticket"></i> NDSGN8276-008-171121XE-D
+                            <i class="icon icon--ticket"></i>ID: @Html.DisplayFor(model => model.IdTour)
                         </div>
                     </div>
-                    <p class="title-booking" id="title">Khám phá Bình Châu - Thư giãn với suối khoáng nóng Minera - Tặng gói trải nghiệm dịch vụ VIP (Nhóm 6 khách)</p>
+                    <p class="title-booking" id="title">@Html.DisplayFor(model => model.TitleTour)</p>
                     <div class="entry">
                         <div class="entry-inner">
-                            <span>Khởi hành <b>17/11/2021</b></span>
-                            <span>Thời gian <b>3 ngày</b></span>
-                            <span>Nơi khởi hành <b>TP. Hồ Chí Minh</b></span>
+                            <span>Khởi hành <b>@Html.DisplayFor(model => model.StartTour)</b></span>
+                            <span>Thời gian <b>@Html.DisplayFor(model => model.TimeTour) ngày</b></span>
+                            <span>Nơi khởi hành <b>@Html.DisplayFor(model => model.StartingGate)</b></span>
                             <span>Số chỗ còn nhận <b>6</b></span><br />
                         </div>
                     </div>
@@ -42,7 +42,7 @@
         </div>
         <div class="col-md-8 col-12 left">
             <h2 class="d-none d-lg-block">Tổng quan về chuyến đi</h2>
-            
+
             <h3>Thông tin liên lạc</h3>
             <div class="customer-contact-book">
                 <form class="customer-contact-inner" action="#" method="get" id="form">
@@ -71,13 +71,17 @@
                         <h4>Người lớn</h4>
                         <p>&gt; 12 tuổi</p>
                     </div>
-                    <div class="change-number" style="pointer-events: none;">
-                        <span class="minus btn-click"><i class="fa fa-minus-circle" id="adultMinus"></i></span>
-                        <span class="number" id="adult">6</span>
-                        <span class="plus btn-click"><i class="fa fa-plus-circle" id="adultPlus"></i></span>
+                    <div class="quantity">
+                        <button class="btn minus-btn disabled" type="button">-</button>
+                        <input type="text" id="quantity" value="1">
+                        <button class="btn plus-btn" type="button">+</button>
                     </div>
+                    <p class="total-price">
+                       
+                        
+                    </p>
                 </div>
-               
+
                 <div class="description hardCode">
                     <h6>Lưu ý</h6>
                     <p>
@@ -86,12 +90,12 @@
                         dụng đăng ký tour online đối với khách từ 70 tuổi trở lên.
                     </p>
                 </div>
-              
+
             </div>
             <div class="customer-notice">
                 <div class="customer-notice-left">
                     . Người lớn sinh trước ngày <b>15/11/2009</b><br>
-                </div>           
+                </div>
             </div>
             <div class="mb-4">
                 <div class="form-check checkbox-input-search d-inline-flex  align-items-center">
@@ -115,7 +119,7 @@
                 <div class="list">
                     <h3>Thông tin hành khách</h3>
                     <form class="customer-contact-inner-1" action="" method="get" id="formMember">
-                        <div class="b-persion block">
+                        <div class="b-persion block " id="forminfo">
                             <h4>Người lớn</h4>
                             <div class="group-info">
                                 <div class="group-info-name">
@@ -251,7 +255,7 @@
                                         <option value="2009">2009</option>
                                     </select>
                                 </div>
-                                
+
                             </div>
                             <div class="group-info">
                                 <div class="group-info-name">
@@ -387,7 +391,7 @@
                                         <option value="2009">2009</option>
                                     </select>
                                 </div>
-                               
+
                             </div>
                             <div class="group-info">
                                 <div class="group-info-name">
@@ -523,7 +527,7 @@
                                         <option value="2009">2009</option>
                                     </select>
                                 </div>
-                                
+
                             </div>
                             <div class="group-info">
                                 <div class="group-info-name">
@@ -795,7 +799,7 @@
                                         <option value="2009">2009</option>
                                     </select>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </form>
@@ -860,10 +864,10 @@
                 <h3>Tóm tắt chuyến đi</h3>
                 <div class="product">
                     <div class="product-content">
-                        <p class="title">Khám phá Bình Châu - Thư giãn với suối khoáng nóng Minera - Tặng gói trải nghiệm dịch vụ VIP (Nhóm 6 khách)</p>
+                        <p class="title">@Html.DisplayFor(model => model.TitleTour)</p>
                     </div>
                 </div>
-              
+
                 <div class="detail">
                     <table>
                         <tbody>
@@ -915,3 +919,5 @@
         </div>
     </div>
 </div>
+
+

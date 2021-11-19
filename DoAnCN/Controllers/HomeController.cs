@@ -48,14 +48,7 @@ namespace DoAnCN.Controllers
             return View(db);
             
         }
-        public ActionResult Tour123()
-        {
-            int page = 1; int pagesize = 100;
 
-            var db = TourBUS.DanhSach().ToPagedList(page, pagesize);
-            return View(db);
-
-        }
 
 
         public ActionResult TourInfo(int id)
@@ -94,27 +87,46 @@ namespace DoAnCN.Controllers
             return View(employeeViewModel);
         }
 
-
-        public ActionResult Booking()
+        [HttpGet]
+        public ActionResult Booking(int id)
         {
-            return View();
+            var db = TourBUS.DanhSach();
+
+            Tour tour1 = new Tour();
+
+            foreach (Tour tour in db)
+            {
+                if (tour.IdTour == id)
+                {
+                    tour1 = tour;
+                    break;
+                }
+            }
+            if (tour1 == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tour1);
+
         }
 
-        //public JsonResult LoadImages(string id)
-        //{
-        //    var product = TourBUS.ChiTiet(id);
-        //    var images = product.;
-        //    XElement xImages = XElement.Parse(images);
-        //    List<string> listImageReturn = new List<string>();
 
-        //    foreach (XElement element in xImages.Elements())
-        //    {
-        //        listImageReturn.Add(element.Value);
-        //    }
-        //    return Json(new
-        //    {
-        //        data = listImageReturn
-        //    }, JsonRequestBehavior.AllowGet);
-        //}
+
+        [HttpPost]
+        public ActionResult Booking(List<Custumer> custumer)
+        {
+  
+            foreach (Custumer Emp in custumer)
+            {
+                Custumer cus = db.Custumers.Find(Emp.IdCustumer);
+                cus.FullNameCustumer = Emp.FullNameCustumer;
+                cus.DateOfBirth = Emp.DateOfBirth;
+                cus.Sex = Emp.Sex;
+                cus.IdTour = Emp.IdTour;
+            }
+            db.SaveChanges();
+            return View();
+        }
+        
     }
 }

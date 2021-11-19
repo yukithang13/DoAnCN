@@ -30,12 +30,11 @@
                 </div>
             </div>
             <div class="group-add-cart">
-                <a href="#" class="add-to-cart">
+                <button class="add-to-cart">
                     <i class="fas fa-cart-plus"></i>
-                    <label>
-                        Đặt ngay
-                    </label>
-                </a>
+                    <span class="text-booking">@Html.ActionLink("Đặt ngay", "Booking", new { id = Model.IdTour })</span>
+                </button>
+                
                 <a href="#" class="add-to-group" @*data-bs-toggle="modal" data-bs-target="#supportModal"*@>
                     <label>Liên hệ tư vấn</label>
                 </a>
@@ -45,7 +44,7 @@
 
     <div class="imgTour">
         
-        <img class="Info-img" src="@Url.Content(Model.ImageTour)" />
+        <img class="Info-img" src="@Url.Content("~/Content/images/"+Model.ImageTour)" />
 
     </div>
     <div class="row">
@@ -118,5 +117,5 @@
 
 </div>
 
-
+<h2>Đang Update(Hành trình tuor)</h2>
 
