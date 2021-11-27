@@ -198,6 +198,7 @@
     <Compile Include="Areas\Admin\Controllers\AdminVController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Admin3Controller.cs" />
+    <Compile Include="Controllers\EmailSetupController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Models\AdminT.cs">
@@ -219,6 +220,7 @@
     <Compile Include="Models\Custumer.cs">
       <DependentUpon>TravelDbContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Data\Gmail.cs" />
     <Compile Include="Models\Data\InfoBUS.cs" />
     <Compile Include="Models\DetailTour.cs">
       <DependentUpon>TravelDbContext.tt</DependentUpon>
@@ -2121,6 +2123,7 @@
     <Content Include="Views\Admin3\ListTourAd.cshtml" />
     <Content Include="Views\Admin3\EditTourTe.cshtml" />
     <Content Include="Views\Home\Booking.cshtml" />
+    <Content Include="Views\EmailSetup\Email.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

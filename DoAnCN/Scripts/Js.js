@@ -15,6 +15,22 @@ function initMap() {
 }
 
 
+//Ngay
+var today = new Date();
+var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var dateTime = date;
+document.getElementById("currentDateTime").value = dateTime;
+
+
+//dem tien
+
+
+
+
+
+
+
 
 //slider
 const testimonialsContainer = document.querySelector(".testimonials-container");

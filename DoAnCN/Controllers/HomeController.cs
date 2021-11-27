@@ -3,7 +3,10 @@ using DoAnCN.Models.Data;
 using PagedList;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 
@@ -13,7 +16,6 @@ namespace DoAnCN.Controllers
     {
         public ActionResult Index()
         {
-            
 
             var db = TourBUS.Top4().ToPagedList(1, 4);
             return View(db);
@@ -28,16 +30,7 @@ namespace DoAnCN.Controllers
         }
 
 
-        public ActionResult ContactHome()
-        {
 
-            return View();
-        }
-
-        public ActionResult Ct()
-        {
-            return View();
-        }
 
         DulichEntities6 db = new DulichEntities6();
         public ActionResult Tour()
@@ -110,10 +103,38 @@ namespace DoAnCN.Controllers
 
         }
 
+        [HttpPost]
+        public ActionResult InsertInfo(InfoContact _customer)
+        {
+            InfoContact vv = new InfoContact();
+            vv.FullName = _customer.FullName;
+            vv.Email = _customer.Email;
+            vv.Phone = _customer.Phone;
+            vv.Note = _customer.Note;
+            db.InfoContacts.Add(vv);
+            db.SaveChanges();
+
+            return Json(_customer);
+        }
+
+        [HttpPost]
+        public ActionResult InsertCustomer(Custumer cus)
+        {
+            Custumer vv = new Custumer();
+
+            vv.FullNameCustumer = cus.FullNameCustumer;
+            vv.DateOfBirth = cus.DateOfBirth;
+            vv.Sex = cus.Sex;
+            vv.IdTour = cus.IdTour;
+            db.Custumers.Add(vv);
+            db.SaveChanges();
+
+            return Json(cus);
+        }
 
 
         [HttpPost]
-        public ActionResult Booking(List<Custumer> custumer)
+        public ActionResult _Booking(List<Custumer> custumer)
         {
   
             foreach (Custumer Emp in custumer)
@@ -127,6 +148,35 @@ namespace DoAnCN.Controllers
             db.SaveChanges();
             return View();
         }
-        
+
+
+
+
+        public ActionResult Ct()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Ct(DoAnCN.Models.Data.Gmail model)
+        {
+
+            MailMessage mm = new MailMessage("yukithang0@gmail.com", model.To);
+            mm.Subject = model.Subject;
+            mm.Body = model.Body;
+            mm.IsBodyHtml = false;
+
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
+
+            NetworkCredential nc = new NetworkCredential("yukithang0@gmail.com", "thang123t");
+            smtp.UseDefaultCredentials = true;
+            smtp.Credentials = nc;
+            smtp.Send(mm);
+
+            ViewBag.Message = "Successfully";
+            return View();
+        }
     }
 }

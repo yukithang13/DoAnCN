@@ -24,7 +24,7 @@
         <div class="col-md-5 col-12 right">
             <div class="group-price">
                 <div class="sale-price">
-                    <p><span class="price">@Html.DisplayFor(model => model.PriceTour)₫</span>/10 khách</p>
+                    <p><span class="price">@Html.DisplayFor(model => model.PriceTour)₫</span>/1 khách</p>
                 </div>
                 <div class="saving">
                 </div>
@@ -35,7 +35,7 @@
                     <span class="text-booking">@Html.ActionLink("Đặt ngay", "Booking", new { id = Model.IdTour })</span>
                 </button>
                 
-                <a href="#" class="add-to-group" @*data-bs-toggle="modal" data-bs-target="#supportModal"*@>
+                <a href="#" class="add-to-group" id="btna" @*data-bs-toggle="modal" data-bs-target="#supportModal"*@>
                     <label>Liên hệ tư vấn</label>
                 </a>
             </div>

@@ -1665,3 +1665,46 @@ detail table .total td.t-price {
     cursor: pointer;
 }
 
+input#idt {
+    border: hidden;
+    background: #f9f9f9;
+}
+
+input#currentDateTime {
+    text-align: right;
+    border: hidden;
+    background-color: white;
+}
+
+input#TotalPrice {
+    text-align: right;
+    color: red;
+    border: hidden;
+    padding: 25px 0;
+    font-weight: 700;
+}
+
+input#btnDiscountCode {
+    background-color: #56baed;
+    border: none;
+    color: white;
+    padding: 10px 69px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 13px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+th.thanhtoan {
+    font-weight: 100;
+    line-height: 55px;
+    width: 28%;
+}
+td.tota {
+    font-weight: 700;
+    color:red;
+}
+
+
