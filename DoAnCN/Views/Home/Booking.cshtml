@@ -118,7 +118,7 @@
                         <form class="customer-contact-inner-1" action="" method="get" id="formMember">
                             <div class="b-persion block " id="forminfo">
                                 <h4>Người lớn</h4>
-                                <div class="group-info">
+                                <div class="group-info" id="gr-if">
                                     <div class="group-info-name">
                                         <span>Họ tên</span>
                                         <input value="1" data-val="true" data-val-number="The field persontype must be a number." data-val-required="The persontype field is required." name="[0].persontype" type="hidden">
@@ -254,15 +254,16 @@
                                     </div>
 
                                 </div>
-                                <div class="group-info">
+                                @*day1*@
+                                <div class="group-info" id="gr-if1">
                                     <div class="group-info-name">
                                         <span>Họ tên</span>
                                         <input value="1" data-val="true" data-val-number="The field persontype must be a number." data-val-required="The persontype field is required." name="[1].persontype" type="hidden">
-                                        <input class="form-control" name="[1].fullname" placeholder="Vui lòng nhập Họ tên" required="required" type="text" value="">
+                                        <input id="hoten-if1" class="form-control" name="[1].fullname" placeholder="Vui lòng nhập Họ tên" required="required" type="text" value="">
                                     </div>
                                     <div class="group-info-sex">
                                         <span>Giới tính</span>
-                                        <select class="form-control" name="[1].gender" placeholder="Vui lòng chọn giới tính" required="required">
+                                        <select id="sex-if1" class="form-control" name="[1].gender" placeholder="Vui lòng chọn giới tính" required="required">
                                             <option selected="selected" value="">Giới tính</option>
                                             <option value="0">Nữ</option>
                                             <option value="1">Nam</option>
@@ -270,7 +271,7 @@
                                     </div>
                                     <div class="group-info-birthday">
                                         <span>Ngày sinh</span>
-                                        <select class="form-control" name="[1].day" placeholder="Vui lòng chọn ngày" required="required">
+                                        <select id="day-if1" class="form-control" name="[1].day" placeholder="Vui lòng chọn ngày" required="required">
                                             <option selected="selected" value="">Ngày</option>
                                             <option value="01">01</option>
                                             <option value="02">02</option>
@@ -307,7 +308,7 @@
                                     </div>
                                     <div class="group-info-month">
                                         <span>&nbsp;</span>
-                                        <select class="form-control" name="[1].month" placeholder="Vui lòng chọn tháng" required="required">
+                                        <select id="mon-if1" class="form-control" name="[1].month" placeholder="Vui lòng chọn tháng" required="required">
                                             <option selected="selected" value="">Tháng</option>
                                             <option value="01">01</option>
                                             <option value="02">02</option>
@@ -325,7 +326,7 @@
                                     </div>
                                     <div class="group-info-year">
                                         <span>&nbsp;</span>
-                                        <select class="form-control" name="[1].year" placeholder="Vui lòng chọn năm" required="required">
+                                        <select id="year-if1" class="form-control" name="[1].year" placeholder="Vui lòng chọn năm" required="required">
                                             <option selected="selected" value="">Năm</option>
                                             <option value="1951">1951</option>
                                             <option value="1952">1952</option>
@@ -390,15 +391,16 @@
                                     </div>
 
                                 </div>
-                                <div class="group-info">
+                                @*day2*@
+                                <div class="group-info" id="gr-if2">
                                     <div class="group-info-name">
                                         <span>Họ tên</span>
                                         <input value="1" data-val="true" data-val-number="The field persontype must be a number." data-val-required="The persontype field is required." name="[2].persontype" type="hidden">
-                                        <input class="form-control" name="[2].fullname" placeholder="Vui lòng nhập Họ tên" required="required" type="text" value="">
+                                        <input id="hoten-if2" class="form-control" name="[2].fullname" placeholder="Vui lòng nhập Họ tên" required="required" type="text" value="">
                                     </div>
                                     <div class="group-info-sex">
                                         <span>Giới tính</span>
-                                        <select class="form-control" name="[2].gender" placeholder="Vui lòng chọn giới tính" required="required">
+                                        <select id="sex-if2" class="form-control" name="[2].gender" placeholder="Vui lòng chọn giới tính" required="required">
                                             <option selected="selected" value="">Giới tính</option>
                                             <option value="0">Nữ</option>
                                             <option value="1">Nam</option>
@@ -406,7 +408,7 @@
                                     </div>
                                     <div class="group-info-birthday">
                                         <span>Ngày sinh</span>
-                                        <select class="form-control" name="[2].day" placeholder="Vui lòng chọn ngày" required="required">
+                                        <select id="day-if2" class="form-control" name="[2].day" placeholder="Vui lòng chọn ngày" required="required">
                                             <option selected="selected" value="">Ngày</option>
                                             <option value="01">01</option>
                                             <option value="02">02</option>
@@ -443,7 +445,7 @@
                                     </div>
                                     <div class="group-info-month">
                                         <span>&nbsp;</span>
-                                        <select class="form-control" name="[2].month" placeholder="Vui lòng chọn tháng" required="required">
+                                        <select id="mon-if2" class="form-control" name="[2].month" placeholder="Vui lòng chọn tháng" required="required">
                                             <option selected="selected" value="">Tháng</option>
                                             <option value="01">01</option>
                                             <option value="02">02</option>
@@ -461,7 +463,7 @@
                                     </div>
                                     <div class="group-info-year">
                                         <span>&nbsp;</span>
-                                        <select class="form-control" name="[2].year" placeholder="Vui lòng chọn năm" required="required">
+                                        <select id="year-if2" class="form-control" name="[2].year" placeholder="Vui lòng chọn năm" required="required">
                                             <option selected="selected" value="">Năm</option>
                                             <option value="1951">1951</option>
                                             <option value="1952">1952</option>
@@ -526,15 +528,16 @@
                                     </div>
 
                                 </div>
-                                <div class="group-info">
+                                @*day3*@
+                                <div class="group-info" id="gr-if3">
                                     <div class="group-info-name">
                                         <span>Họ tên</span>
                                         <input value="1" data-val="true" data-val-number="The field persontype must be a number." data-val-required="The persontype field is required." name="[3].persontype" type="hidden">
-                                        <input class="form-control" name="[3].fullname" placeholder="Vui lòng nhập Họ tên" required="required" type="text" value="">
+                                        <input id="hoten-if3" class="form-control" name="[3].fullname" placeholder="Vui lòng nhập Họ tên" required="required" type="text" value="">
                                     </div>
                                     <div class="group-info-sex">
                                         <span>Giới tính</span>
-                                        <select class="form-control" name="[3].gender" placeholder="Vui lòng chọn giới tính" required="required">
+                                        <select id="sex-if3" class="form-control" name="[3].gender" placeholder="Vui lòng chọn giới tính" required="required">
                                             <option selected="selected" value="">Giới tính</option>
                                             <option value="0">Nữ</option>
                                             <option value="1">Nam</option>
@@ -542,7 +545,7 @@
                                     </div>
                                     <div class="group-info-birthday">
                                         <span>Ngày sinh</span>
-                                        <select class="form-control" name="[3].day" placeholder="Vui lòng chọn ngày" required="required">
+                                        <select id="day-if3" class="form-control" name="[3].day" placeholder="Vui lòng chọn ngày" required="required">
                                             <option selected="selected" value="">Ngày</option>
                                             <option value="01">01</option>
                                             <option value="02">02</option>
@@ -579,7 +582,7 @@
                                     </div>
                                     <div class="group-info-month">
                                         <span>&nbsp;</span>
-                                        <select class="form-control" name="[3].month" placeholder="Vui lòng chọn tháng" required="required">
+                                        <select id="mon-if3" class="form-control" name="[3].month" placeholder="Vui lòng chọn tháng" required="required">
                                             <option selected="selected" value="">Tháng</option>
                                             <option value="01">01</option>
                                             <option value="02">02</option>
@@ -597,7 +600,7 @@
                                     </div>
                                     <div class="group-info-year">
                                         <span>&nbsp;</span>
-                                        <select class="form-control" name="[3].year" placeholder="Vui lòng chọn năm" required="required">
+                                        <select id="year-if3" class="form-control" name="[3].year" placeholder="Vui lòng chọn năm" required="required">
                                             <option selected="selected" value="">Năm</option>
                                             <option value="1951">1951</option>
                                             <option value="1952">1952</option>
@@ -662,15 +665,16 @@
                                     </div>
 
                                 </div>
-                                <div class="group-info">
+                                @*day4*@
+                                <div class="group-info" id="gr-if4">
                                     <div class="group-info-name">
                                         <span>Họ tên</span>
                                         <input value="1" data-val="true" data-val-number="The field persontype must be a number." data-val-required="The persontype field is required." name="[4].persontype" type="hidden">
-                                        <input class="form-control" name="[4].fullname" placeholder="Vui lòng nhập Họ tên" required="required" type="text" value="">
+                                        <input id="hoten-if4" class="form-control" name="[4].fullname" placeholder="Vui lòng nhập Họ tên" required="required" type="text" value="">
                                     </div>
                                     <div class="group-info-sex">
                                         <span>Giới tính</span>
-                                        <select class="form-control" name="[4].gender" placeholder="Vui lòng chọn giới tính" required="required">
+                                        <select id="sex-if4" class="form-control" name="[4].gender" placeholder="Vui lòng chọn giới tính" required="required">
                                             <option selected="selected" value="">Giới tính</option>
                                             <option value="0">Nữ</option>
                                             <option value="1">Nam</option>
@@ -678,7 +682,7 @@
                                     </div>
                                     <div class="group-info-birthday">
                                         <span>Ngày sinh</span>
-                                        <select class="form-control" name="[4].day" placeholder="Vui lòng chọn ngày" required="required">
+                                        <select id="day-if4" class="form-control" name="[4].day" placeholder="Vui lòng chọn ngày" required="required">
                                             <option selected="selected" value="">Ngày</option>
                                             <option value="01">01</option>
                                             <option value="02">02</option>
@@ -715,7 +719,7 @@
                                     </div>
                                     <div class="group-info-month">
                                         <span>&nbsp;</span>
-                                        <select class="form-control" name="[4].month" placeholder="Vui lòng chọn tháng" required="required">
+                                        <select id="mon-if4" class="form-control" name="[4].month" placeholder="Vui lòng chọn tháng" required="required">
                                             <option selected="selected" value="">Tháng</option>
                                             <option value="01">01</option>
                                             <option value="02">02</option>
@@ -733,7 +737,7 @@
                                     </div>
                                     <div class="group-info-year">
                                         <span>&nbsp;</span>
-                                        <select class="form-control" name="[4].year" placeholder="Vui lòng chọn năm" required="required">
+                                        <select id="year-if4" class="form-control" name="[4].year" placeholder="Vui lòng chọn năm" required="required">
                                             <option selected="selected" value="">Năm</option>
                                             <option value="1951">1951</option>
                                             <option value="1952">1952</option>
@@ -798,6 +802,692 @@
                                     </div>
 
                                 </div>
+                                @*day5*@
+                                <div class="group-info" id="gr-if5">
+                                    <div class="group-info-name">
+                                        <span>Họ tên</span>
+                                        <input value="1" data-val="true" data-val-number="The field persontype must be a number." data-val-required="The persontype field is required." name="[4].persontype" type="hidden">
+                                        <input id="hoten-if5" class="form-control" name="[4].fullname" placeholder="Vui lòng nhập Họ tên" required="required" type="text" value="">
+                                    </div>
+                                    <div class="group-info-sex">
+                                        <span>Giới tính</span>
+                                        <select id="sex-if5" class="form-control" name="[4].gender" placeholder="Vui lòng chọn giới tính" required="required">
+                                            <option selected="selected" value="">Giới tính</option>
+                                            <option value="0">Nữ</option>
+                                            <option value="1">Nam</option>
+                                        </select>
+                                    </div>
+                                    <div class="group-info-birthday">
+                                        <span>Ngày sinh</span>
+                                        <select id="day-if5" class="form-control" name="[4].day" placeholder="Vui lòng chọn ngày" required="required">
+                                            <option selected="selected" value="">Ngày</option>
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                            <option value="24">24</option>
+                                            <option value="25">25</option>
+                                            <option value="26">26</option>
+                                            <option value="27">27</option>
+                                            <option value="28">28</option>
+                                            <option value="29">29</option>
+                                            <option value="30">30</option>
+                                            <option value="31">31</option>
+                                        </select>
+                                    </div>
+                                    <div class="group-info-month">
+                                        <span>&nbsp;</span>
+                                        <select id="mon-if5" class="form-control" name="[4].month" placeholder="Vui lòng chọn tháng" required="required">
+                                            <option selected="selected" value="">Tháng</option>
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                    </div>
+                                    <div class="group-info-year">
+                                        <span>&nbsp;</span>
+                                        <select id="year-if5" class="form-control" name="[4].year" placeholder="Vui lòng chọn năm" required="required">
+                                            <option selected="selected" value="">Năm</option>
+                                            <option value="1951">1951</option>
+                                            <option value="1952">1952</option>
+                                            <option value="1953">1953</option>
+                                            <option value="1954">1954</option>
+                                            <option value="1955">1955</option>
+                                            <option value="1956">1956</option>
+                                            <option value="1957">1957</option>
+                                            <option value="1958">1958</option>
+                                            <option value="1959">1959</option>
+                                            <option value="1960">1960</option>
+                                            <option value="1961">1961</option>
+                                            <option value="1962">1962</option>
+                                            <option value="1963">1963</option>
+                                            <option value="1964">1964</option>
+                                            <option value="1965">1965</option>
+                                            <option value="1966">1966</option>
+                                            <option value="1967">1967</option>
+                                            <option value="1968">1968</option>
+                                            <option value="1969">1969</option>
+                                            <option value="1970">1970</option>
+                                            <option value="1971">1971</option>
+                                            <option value="1972">1972</option>
+                                            <option value="1973">1973</option>
+                                            <option value="1974">1974</option>
+                                            <option value="1975">1975</option>
+                                            <option value="1976">1976</option>
+                                            <option value="1977">1977</option>
+                                            <option value="1978">1978</option>
+                                            <option value="1979">1979</option>
+                                            <option value="1980">1980</option>
+                                            <option value="1981">1981</option>
+                                            <option value="1982">1982</option>
+                                            <option value="1983">1983</option>
+                                            <option value="1984">1984</option>
+                                            <option value="1985">1985</option>
+                                            <option value="1986">1986</option>
+                                            <option value="1987">1987</option>
+                                            <option value="1988">1988</option>
+                                            <option value="1989">1989</option>
+                                            <option value="1990">1990</option>
+                                            <option value="1991">1991</option>
+                                            <option value="1992">1992</option>
+                                            <option value="1993">1993</option>
+                                            <option value="1994">1994</option>
+                                            <option value="1995">1995</option>
+                                            <option value="1996">1996</option>
+                                            <option value="1997">1997</option>
+                                            <option value="1998">1998</option>
+                                            <option value="1999">1999</option>
+                                            <option value="2000">2000</option>
+                                            <option value="2001">2001</option>
+                                            <option value="2002">2002</option>
+                                            <option value="2003">2003</option>
+                                            <option value="2004">2004</option>
+                                            <option value="2005">2005</option>
+                                            <option value="2006">2006</option>
+                                            <option value="2007">2007</option>
+                                            <option value="2008">2008</option>
+                                            <option value="2009">2009</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                @*day6*@
+                                <div class="group-info" id="gr-if6">
+                                    <div class="group-info-name">
+                                        <span>Họ tên</span>
+                                        <input value="1" data-val="true" data-val-number="The field persontype must be a number." data-val-required="The persontype field is required." name="[4].persontype" type="hidden">
+                                        <input id="hoten-if6" class="form-control" name="[4].fullname" placeholder="Vui lòng nhập Họ tên" required="required" type="text" value="">
+                                    </div>
+                                    <div class="group-info-sex">
+                                        <span>Giới tính</span>
+                                        <select id="sex-if6" class="form-control" name="[4].gender" placeholder="Vui lòng chọn giới tính" required="required">
+                                            <option selected="selected" value="">Giới tính</option>
+                                            <option value="0">Nữ</option>
+                                            <option value="1">Nam</option>
+                                        </select>
+                                    </div>
+                                    <div class="group-info-birthday">
+                                        <span>Ngày sinh</span>
+                                        <select id="day-if6" class="form-control" name="[4].day" placeholder="Vui lòng chọn ngày" required="required">
+                                            <option selected="selected" value="">Ngày</option>
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                            <option value="24">24</option>
+                                            <option value="25">25</option>
+                                            <option value="26">26</option>
+                                            <option value="27">27</option>
+                                            <option value="28">28</option>
+                                            <option value="29">29</option>
+                                            <option value="30">30</option>
+                                            <option value="31">31</option>
+                                        </select>
+                                    </div>
+                                    <div class="group-info-month">
+                                        <span>&nbsp;</span>
+                                        <select id="mon-if6" class="form-control" name="[4].month" placeholder="Vui lòng chọn tháng" required="required">
+                                            <option selected="selected" value="">Tháng</option>
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                    </div>
+                                    <div class="group-info-year">
+                                        <span>&nbsp;</span>
+                                        <select id="year-if6" class="form-control" name="[4].year" placeholder="Vui lòng chọn năm" required="required">
+                                            <option selected="selected" value="">Năm</option>
+                                            <option value="1951">1951</option>
+                                            <option value="1952">1952</option>
+                                            <option value="1953">1953</option>
+                                            <option value="1954">1954</option>
+                                            <option value="1955">1955</option>
+                                            <option value="1956">1956</option>
+                                            <option value="1957">1957</option>
+                                            <option value="1958">1958</option>
+                                            <option value="1959">1959</option>
+                                            <option value="1960">1960</option>
+                                            <option value="1961">1961</option>
+                                            <option value="1962">1962</option>
+                                            <option value="1963">1963</option>
+                                            <option value="1964">1964</option>
+                                            <option value="1965">1965</option>
+                                            <option value="1966">1966</option>
+                                            <option value="1967">1967</option>
+                                            <option value="1968">1968</option>
+                                            <option value="1969">1969</option>
+                                            <option value="1970">1970</option>
+                                            <option value="1971">1971</option>
+                                            <option value="1972">1972</option>
+                                            <option value="1973">1973</option>
+                                            <option value="1974">1974</option>
+                                            <option value="1975">1975</option>
+                                            <option value="1976">1976</option>
+                                            <option value="1977">1977</option>
+                                            <option value="1978">1978</option>
+                                            <option value="1979">1979</option>
+                                            <option value="1980">1980</option>
+                                            <option value="1981">1981</option>
+                                            <option value="1982">1982</option>
+                                            <option value="1983">1983</option>
+                                            <option value="1984">1984</option>
+                                            <option value="1985">1985</option>
+                                            <option value="1986">1986</option>
+                                            <option value="1987">1987</option>
+                                            <option value="1988">1988</option>
+                                            <option value="1989">1989</option>
+                                            <option value="1990">1990</option>
+                                            <option value="1991">1991</option>
+                                            <option value="1992">1992</option>
+                                            <option value="1993">1993</option>
+                                            <option value="1994">1994</option>
+                                            <option value="1995">1995</option>
+                                            <option value="1996">1996</option>
+                                            <option value="1997">1997</option>
+                                            <option value="1998">1998</option>
+                                            <option value="1999">1999</option>
+                                            <option value="2000">2000</option>
+                                            <option value="2001">2001</option>
+                                            <option value="2002">2002</option>
+                                            <option value="2003">2003</option>
+                                            <option value="2004">2004</option>
+                                            <option value="2005">2005</option>
+                                            <option value="2006">2006</option>
+                                            <option value="2007">2007</option>
+                                            <option value="2008">2008</option>
+                                            <option value="2009">2009</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                @*day7*@
+                                <div class="group-info" id="gr-if7">
+                                    <div class="group-info-name">
+                                        <span>Họ tên</span>
+                                        <input value="1" data-val="true" data-val-number="The field persontype must be a number." data-val-required="The persontype field is required." name="[4].persontype" type="hidden">
+                                        <input id="hoten-if7" class="form-control" name="[4].fullname" placeholder="Vui lòng nhập Họ tên" required="required" type="text" value="">
+                                    </div>
+                                    <div class="group-info-sex">
+                                        <span>Giới tính</span>
+                                        <select id="sex-if7" class="form-control" name="[4].gender" placeholder="Vui lòng chọn giới tính" required="required">
+                                            <option selected="selected" value="">Giới tính</option>
+                                            <option value="0">Nữ</option>
+                                            <option value="1">Nam</option>
+                                        </select>
+                                    </div>
+                                    <div class="group-info-birthday">
+                                        <span>Ngày sinh</span>
+                                        <select id="day-if7" class="form-control" name="[4].day" placeholder="Vui lòng chọn ngày" required="required">
+                                            <option selected="selected" value="">Ngày</option>
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                            <option value="24">24</option>
+                                            <option value="25">25</option>
+                                            <option value="26">26</option>
+                                            <option value="27">27</option>
+                                            <option value="28">28</option>
+                                            <option value="29">29</option>
+                                            <option value="30">30</option>
+                                            <option value="31">31</option>
+                                        </select>
+                                    </div>
+                                    <div class="group-info-month">
+                                        <span>&nbsp;</span>
+                                        <select id="mon-if7" class="form-control" name="[4].month" placeholder="Vui lòng chọn tháng" required="required">
+                                            <option selected="selected" value="">Tháng</option>
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                    </div>
+                                    <div class="group-info-year">
+                                        <span>&nbsp;</span>
+                                        <select id="year-if7" class="form-control" name="[4].year" placeholder="Vui lòng chọn năm" required="required">
+                                            <option selected="selected" value="">Năm</option>
+                                            <option value="1951">1951</option>
+                                            <option value="1952">1952</option>
+                                            <option value="1953">1953</option>
+                                            <option value="1954">1954</option>
+                                            <option value="1955">1955</option>
+                                            <option value="1956">1956</option>
+                                            <option value="1957">1957</option>
+                                            <option value="1958">1958</option>
+                                            <option value="1959">1959</option>
+                                            <option value="1960">1960</option>
+                                            <option value="1961">1961</option>
+                                            <option value="1962">1962</option>
+                                            <option value="1963">1963</option>
+                                            <option value="1964">1964</option>
+                                            <option value="1965">1965</option>
+                                            <option value="1966">1966</option>
+                                            <option value="1967">1967</option>
+                                            <option value="1968">1968</option>
+                                            <option value="1969">1969</option>
+                                            <option value="1970">1970</option>
+                                            <option value="1971">1971</option>
+                                            <option value="1972">1972</option>
+                                            <option value="1973">1973</option>
+                                            <option value="1974">1974</option>
+                                            <option value="1975">1975</option>
+                                            <option value="1976">1976</option>
+                                            <option value="1977">1977</option>
+                                            <option value="1978">1978</option>
+                                            <option value="1979">1979</option>
+                                            <option value="1980">1980</option>
+                                            <option value="1981">1981</option>
+                                            <option value="1982">1982</option>
+                                            <option value="1983">1983</option>
+                                            <option value="1984">1984</option>
+                                            <option value="1985">1985</option>
+                                            <option value="1986">1986</option>
+                                            <option value="1987">1987</option>
+                                            <option value="1988">1988</option>
+                                            <option value="1989">1989</option>
+                                            <option value="1990">1990</option>
+                                            <option value="1991">1991</option>
+                                            <option value="1992">1992</option>
+                                            <option value="1993">1993</option>
+                                            <option value="1994">1994</option>
+                                            <option value="1995">1995</option>
+                                            <option value="1996">1996</option>
+                                            <option value="1997">1997</option>
+                                            <option value="1998">1998</option>
+                                            <option value="1999">1999</option>
+                                            <option value="2000">2000</option>
+                                            <option value="2001">2001</option>
+                                            <option value="2002">2002</option>
+                                            <option value="2003">2003</option>
+                                            <option value="2004">2004</option>
+                                            <option value="2005">2005</option>
+                                            <option value="2006">2006</option>
+                                            <option value="2007">2007</option>
+                                            <option value="2008">2008</option>
+                                            <option value="2009">2009</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                @*day8*@
+                                <div class="group-info" id="gr-if8">
+                                    <div class="group-info-name">
+                                        <span>Họ tên</span>
+                                        <input value="1" data-val="true" data-val-number="The field persontype must be a number." data-val-required="The persontype field is required." name="[4].persontype" type="hidden">
+                                        <input id="hoten-if8" class="form-control" name="[4].fullname" placeholder="Vui lòng nhập Họ tên" required="required" type="text" value="">
+                                    </div>
+                                    <div class="group-info-sex">
+                                        <span>Giới tính</span>
+                                        <select id="sex-if8" class="form-control" name="[4].gender" placeholder="Vui lòng chọn giới tính" required="required">
+                                            <option selected="selected" value="">Giới tính</option>
+                                            <option value="0">Nữ</option>
+                                            <option value="1">Nam</option>
+                                        </select>
+                                    </div>
+                                    <div class="group-info-birthday">
+                                        <span>Ngày sinh</span>
+                                        <select id="day-if8" class="form-control" name="[4].day" placeholder="Vui lòng chọn ngày" required="required">
+                                            <option selected="selected" value="">Ngày</option>
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                            <option value="24">24</option>
+                                            <option value="25">25</option>
+                                            <option value="26">26</option>
+                                            <option value="27">27</option>
+                                            <option value="28">28</option>
+                                            <option value="29">29</option>
+                                            <option value="30">30</option>
+                                            <option value="31">31</option>
+                                        </select>
+                                    </div>
+                                    <div class="group-info-month">
+                                        <span>&nbsp;</span>
+                                        <select id="mon-if8" class="form-control" name="[4].month" placeholder="Vui lòng chọn tháng" required="required">
+                                            <option selected="selected" value="">Tháng</option>
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                    </div>
+                                    <div class="group-info-year">
+                                        <span>&nbsp;</span>
+                                        <select id="year-if8" class="form-control" name="[4].year" placeholder="Vui lòng chọn năm" required="required">
+                                            <option selected="selected" value="">Năm</option>
+                                            <option value="1951">1951</option>
+                                            <option value="1952">1952</option>
+                                            <option value="1953">1953</option>
+                                            <option value="1954">1954</option>
+                                            <option value="1955">1955</option>
+                                            <option value="1956">1956</option>
+                                            <option value="1957">1957</option>
+                                            <option value="1958">1958</option>
+                                            <option value="1959">1959</option>
+                                            <option value="1960">1960</option>
+                                            <option value="1961">1961</option>
+                                            <option value="1962">1962</option>
+                                            <option value="1963">1963</option>
+                                            <option value="1964">1964</option>
+                                            <option value="1965">1965</option>
+                                            <option value="1966">1966</option>
+                                            <option value="1967">1967</option>
+                                            <option value="1968">1968</option>
+                                            <option value="1969">1969</option>
+                                            <option value="1970">1970</option>
+                                            <option value="1971">1971</option>
+                                            <option value="1972">1972</option>
+                                            <option value="1973">1973</option>
+                                            <option value="1974">1974</option>
+                                            <option value="1975">1975</option>
+                                            <option value="1976">1976</option>
+                                            <option value="1977">1977</option>
+                                            <option value="1978">1978</option>
+                                            <option value="1979">1979</option>
+                                            <option value="1980">1980</option>
+                                            <option value="1981">1981</option>
+                                            <option value="1982">1982</option>
+                                            <option value="1983">1983</option>
+                                            <option value="1984">1984</option>
+                                            <option value="1985">1985</option>
+                                            <option value="1986">1986</option>
+                                            <option value="1987">1987</option>
+                                            <option value="1988">1988</option>
+                                            <option value="1989">1989</option>
+                                            <option value="1990">1990</option>
+                                            <option value="1991">1991</option>
+                                            <option value="1992">1992</option>
+                                            <option value="1993">1993</option>
+                                            <option value="1994">1994</option>
+                                            <option value="1995">1995</option>
+                                            <option value="1996">1996</option>
+                                            <option value="1997">1997</option>
+                                            <option value="1998">1998</option>
+                                            <option value="1999">1999</option>
+                                            <option value="2000">2000</option>
+                                            <option value="2001">2001</option>
+                                            <option value="2002">2002</option>
+                                            <option value="2003">2003</option>
+                                            <option value="2004">2004</option>
+                                            <option value="2005">2005</option>
+                                            <option value="2006">2006</option>
+                                            <option value="2007">2007</option>
+                                            <option value="2008">2008</option>
+                                            <option value="2009">2009</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                @*day9*@
+                                <div class="group-info" id="gr-if9">
+                                    <div class="group-info-name">
+                                        <span>Họ tên</span>
+                                        <input value="1" data-val="true" data-val-number="The field persontype must be a number." data-val-required="The persontype field is required." name="[4].persontype" type="hidden">
+                                        <input id="hoten-if9" class="form-control" name="[4].fullname" placeholder="Vui lòng nhập Họ tên" required="required" type="text" value="">
+                                    </div>
+                                    <div class="group-info-sex">
+                                        <span>Giới tính</span>
+                                        <select id="sex-if9" class="form-control" name="[4].gender" placeholder="Vui lòng chọn giới tính" required="required">
+                                            <option selected="selected" value="">Giới tính</option>
+                                            <option value="0">Nữ</option>
+                                            <option value="1">Nam</option>
+                                        </select>
+                                    </div>
+                                    <div class="group-info-birthday">
+                                        <span>Ngày sinh</span>
+                                        <select id="day-if9" class="form-control" name="[4].day" placeholder="Vui lòng chọn ngày" required="required">
+                                            <option selected="selected" value="">Ngày</option>
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                            <option value="24">24</option>
+                                            <option value="25">25</option>
+                                            <option value="26">26</option>
+                                            <option value="27">27</option>
+                                            <option value="28">28</option>
+                                            <option value="29">29</option>
+                                            <option value="30">30</option>
+                                            <option value="31">31</option>
+                                        </select>
+                                    </div>
+                                    <div class="group-info-month">
+                                        <span>&nbsp;</span>
+                                        <select id="mon-if9" class="form-control" name="[4].month" placeholder="Vui lòng chọn tháng" required="required">
+                                            <option selected="selected" value="">Tháng</option>
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                    </div>
+                                    <div class="group-info-year">
+                                        <span>&nbsp;</span>
+                                        <select id="year-if9" class="form-control" name="[4].year" placeholder="Vui lòng chọn năm" required="required">
+                                            <option selected="selected" value="">Năm</option>
+                                            <option value="1951">1951</option>
+                                            <option value="1952">1952</option>
+                                            <option value="1953">1953</option>
+                                            <option value="1954">1954</option>
+                                            <option value="1955">1955</option>
+                                            <option value="1956">1956</option>
+                                            <option value="1957">1957</option>
+                                            <option value="1958">1958</option>
+                                            <option value="1959">1959</option>
+                                            <option value="1960">1960</option>
+                                            <option value="1961">1961</option>
+                                            <option value="1962">1962</option>
+                                            <option value="1963">1963</option>
+                                            <option value="1964">1964</option>
+                                            <option value="1965">1965</option>
+                                            <option value="1966">1966</option>
+                                            <option value="1967">1967</option>
+                                            <option value="1968">1968</option>
+                                            <option value="1969">1969</option>
+                                            <option value="1970">1970</option>
+                                            <option value="1971">1971</option>
+                                            <option value="1972">1972</option>
+                                            <option value="1973">1973</option>
+                                            <option value="1974">1974</option>
+                                            <option value="1975">1975</option>
+                                            <option value="1976">1976</option>
+                                            <option value="1977">1977</option>
+                                            <option value="1978">1978</option>
+                                            <option value="1979">1979</option>
+                                            <option value="1980">1980</option>
+                                            <option value="1981">1981</option>
+                                            <option value="1982">1982</option>
+                                            <option value="1983">1983</option>
+                                            <option value="1984">1984</option>
+                                            <option value="1985">1985</option>
+                                            <option value="1986">1986</option>
+                                            <option value="1987">1987</option>
+                                            <option value="1988">1988</option>
+                                            <option value="1989">1989</option>
+                                            <option value="1990">1990</option>
+                                            <option value="1991">1991</option>
+                                            <option value="1992">1992</option>
+                                            <option value="1993">1993</option>
+                                            <option value="1994">1994</option>
+                                            <option value="1995">1995</option>
+                                            <option value="1996">1996</option>
+                                            <option value="1997">1997</option>
+                                            <option value="1998">1998</option>
+                                            <option value="1999">1999</option>
+                                            <option value="2000">2000</option>
+                                            <option value="2001">2001</option>
+                                            <option value="2002">2002</option>
+                                            <option value="2003">2003</option>
+                                            <option value="2004">2004</option>
+                                            <option value="2005">2005</option>
+                                            <option value="2006">2006</option>
+                                            <option value="2007">2007</option>
+                                            <option value="2008">2008</option>
+                                            <option value="2009">2009</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                               
                             </div>
                         </form>
                     </div>
@@ -913,7 +1603,7 @@
                         </tbody>
                     </table>
                     <div>
-                        <button class="btn btn-primary btn-order" id="btnAdd" style="width:100% " onclick="tt(); thongtin();">
+                        <button class="btn btn-primary btn-order" id="btnAdd" style="width:100% " onclick="tt();">
                             Thanh Toán
                         </button>
                     </div>
@@ -925,32 +1615,23 @@
 
 
 <script>
+    var txtFullName1 = document.getElementById("hoten-if");
+    var txtFullNameA1 = document.getElementById("hoten-if1");
+    var txtFullNameB1 = document.getElementById("hoten-if2");
+    var txtFullNameC1 = document.getElementById("hoten-if3");
+    var txtFullNameD1 = document.getElementById("hoten-if4");
+    var txtFullNameE1 = document.getElementById("hoten-if5");
+    var txtFullNameF1 = document.getElementById("hoten-if6");
+    var txtFullNameG1 = document.getElementById("hoten-if7");
+    var txtFullNameH1 = document.getElementById("hoten-if8");
+    var txtFullNameI1 = document.getElementById("hoten-if9");
+    var txtSex1 = document.getElementById("sex-if");
+    var txtName1 = document.getElementById("contact_name");
+    var txtEmail1 = document.getElementById("email");
+    var txtPhone1 = document.getElementById("mobilephone");
+    var txtNote1 = document.getElementById("address");
 
 
-    function thongtin() {
-        var txtName = $("#contact_name");
-        var txtEmail = $("#email");
-        var txtPhone = $("#mobilephone");
-        var txtNote = $("#address");
-        var _customer = {};
-        _customer.FullName = txtName.val();
-        _customer.Email = txtEmail.val();
-        _customer.Phone = txtPhone.val();
-        _customer.Note = txtNote.val();
-
-       $.ajax({
-            type: "POST",
-            url: '@Url.Action("InsertInfo", "Home")',
-            data: JSON.stringify(_customer),
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: function () {
-
-            }
-       });
-
-
-    }
     function tt() {
         var txtFullName = $("#hoten-if");
         var txtDate = $("#day-if");
@@ -958,21 +1639,275 @@
         var txtYear = $("#year-if");
         var txtSex = $("#sex-if");
         var txtId = $("#idt");
+
         var cus = {};
         cus.FullNameCustumer = txtFullName.val();
         cus.DateOfBirth = txtDate.val()+ "/" + txtMon.val() + "/" + txtYear.val();
         cus.Sex = txtSex.val();
         cus.IdTour = txtId.val();
-        $.ajax({
-            type: "POST",
-            url: '@Url.Action("InsertCustomer", "Home")',
-            data: JSON.stringify(cus),
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: function () {
-            alert("Add roi`! ");
+
+        var txtFullNameA = $("#hoten-if1");
+        var txtDateA = $("#day-if1");
+        var txtMonA = $("#mon-if1");
+        var txtYearA = $("#year-if1");
+        var txtSexA = $("#sex-if1");
+
+
+        var cusA = {};
+        cusA.FullNameCustumer = txtFullNameA.val();
+        cusA.DateOfBirth = txtDateA.val() + "/" + txtMonA.val() + "/" + txtYearA.val();
+        cusA.Sex = txtSexA.val();
+        cusA.IdTour = txtId.val();
+
+        var txtFullNameB = $("#hoten-if2");
+        var txtDateB = $("#day-if2");
+        var txtMonB = $("#mon-if2");
+        var txtYearB = $("#year-if2");
+        var txtSexB = $("#sex-if2");
+
+        var cusB = {};
+        cusB.FullNameCustumer = txtFullNameB.val();
+        cusB.DateOfBirth = txtDateB.val() + "/" + txtMonB.val() + "/" + txtYearB.val();
+        cusB.Sex = txtSexB.val();
+        cusB.IdTour = txtId.val();
+
+        var txtFullNameC = $("#hoten-if3");
+        var txtDateC = $("#day-if3");
+        var txtMonC = $("#mon-if3");
+        var txtYearC = $("#year-if3");
+        var txtSexC = $("#sex-if3");
+
+        var cusC = {};
+        cusC.FullNameCustumer = txtFullNameC.val();
+        cusC.DateOfBirth = txtDateC.val() + "/" + txtMonC.val() + "/" + txtYearC.val();
+        cusC.Sex = txtSexC.val();
+        cusC.IdTour = txtId.val();
+
+        var txtFullNameD = $("#hoten-if4");
+        var txtDateD = $("#day-if4");
+        var txtMonD = $("#mon-if4");
+        var txtYearD = $("#year-if4");
+        var txtSexD = $("#sex-if4");
+
+        var cusD = {};
+        cusD.FullNameCustumer = txtFullNameD.val();
+        cusD.DateOfBirth = txtDateD.val() + "/" + txtMonD.val() + "/" + txtYearD.val();
+        cusD.Sex = txtSexD.val();
+        cusD.IdTour = txtId.val();
+
+        var txtFullNameE = $("#hoten-if5");
+        var txtDateE = $("#day-if5");
+        var txtMonE = $("#mon-if5");
+        var txtYearE = $("#year-if5");
+        var txtSexE = $("#sex-if5");
+
+        var cusE = {};
+        cusE.FullNameCustumer = txtFullNameE.val();
+        cusE.DateOfBirth = txtDateE.val() + "/" + txtMonE.val() + "/" + txtYearE.val();
+        cusE.Sex = txtSexE.val();
+        cusE.IdTour = txtId.val();
+
+        var txtFullNameF = $("#hoten-if6");
+        var txtDateF = $("#day-if6");
+        var txtMonF = $("#mon-if6");
+        var txtYearF = $("#year-if6");
+        var txtSexF = $("#sex-if6");
+
+        var cusF = {};
+        cusF.FullNameCustumer = txtFullNameF.val();
+        cusF.DateOfBirth = txtDateF.val() + "/" + txtMonF.val() + "/" + txtYearF.val();
+        cusF.Sex = txtSexF.val();
+        cusF.IdTour = txtId.val();
+
+        var txtFullNameG = $("#hoten-if7");
+        var txtDateG = $("#day-if7");
+        var txtMonG = $("#mon-if7");
+        var txtYearG = $("#year-if7");
+        var txtSexG = $("#sex-if7");
+
+        var cusG = {};
+        cusG.FullNameCustumer = txtFullNameG.val();
+        cusG.DateOfBirth = txtDateG.val() + "/" + txtMonG.val() + "/" + txtYearG.val();
+        cusG.Sex = txtSexG.val();
+        cusG.IdTour = txtId.val();
+
+        var txtFullNameH = $("#hoten-if8");
+        var txtDateH = $("#day-if8");
+        var txtMonH = $("#mon-if8");
+        var txtYearH = $("#year-if8");
+        var txtSexH = $("#sex-if8");
+
+        var cusH = {};
+        cusH.FullNameCustumer = txtFullNameH.val();
+        cusH.DateOfBirth = txtDateH.val() + "/" + txtMonH.val() + "/" + txtYearH.val();
+        cusH.Sex = txtSexH.val();
+        cusH.IdTour = txtId.val();
+
+        var txtFullNameI = $("#hoten-if9");
+        var txtDateI = $("#day-if9");
+        var txtMonI = $("#mon-if9");
+        var txtYearI = $("#year-if9");
+        var txtSexI = $("#sex-if9");
+
+        var cusI = {};
+        cusI.FullNameCustumer = txtFullNameI.val();
+        cusI.DateOfBirth = txtDateI.val() + "/" + txtMonI.val() + "/" + txtYearI.val();
+        cusI.Sex = txtSexI.val();
+        cusI.IdTour = txtId.val();
+
+
+
+
+        var txtName = $("#contact_name");
+        var txtEmail = $("#email");
+        var txtPhone = $("#mobilephone");
+        var txtNote = $("#address");
+        var txtNb = $("#number-if");
+
+        var _customer = {};
+        _customer.FullName = txtName.val();
+        _customer.Email = txtEmail.val();
+        _customer.Phone = txtPhone.val();
+        _customer.Note = txtNote.val();
+        _customer.CustumersNumber = txtNb.val();
+        if (txtFullName1.value == "" || txtName1.value == "" || txtEmail1.value == "" || txtPhone1.value == "" || txtNote1.value == "")
+            alert("Vui lòng kiểm tra lại và điền thông tin đầy đủ! ");
+        else {
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("InsertInfo", "Home")',
+                data: JSON.stringify(_customer),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function () {
+
+                }
+             });
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("InsertCustomer", "Home")',
+                data: JSON.stringify(cus),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function () {
+                alert("Add roi`! ");
+                }
+            });
+            if (txtFullNameA1.value != "") {
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("InsertCustomer1", "Home")',
+                    data: JSON.stringify(cusA),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function () {
+
+                    }
+                });
             }
-       });
+            if (txtFullNameB1.value != "") {
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("InsertCustomer2", "Home")',
+                    data: JSON.stringify(cusB),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function () {
+
+                    }
+                });
+            }
+            if (txtFullNameC1.value != "") {
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("InsertCustomer3", "Home")',
+                    data: JSON.stringify(cusC),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function () {
+
+                    }
+                });
+            }
+            if (txtFullNameD1.value != "") {
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("InsertCustomer4", "Home")',
+                    data: JSON.stringify(cusD),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function () {
+
+                    }
+                });
+            }
+            if (txtFullNameE1.value != "") {
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("InsertCustomer5", "Home")',
+                    data: JSON.stringify(cusE),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function () {
+
+                    }
+                });
+            }
+            if (txtFullNameF1.value != "") {
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("InsertCustomer6", "Home")',
+                    data: JSON.stringify(cusF),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function () {
+
+                    }
+                });
+            }
+            if (txtFullNameG1.value != "") {
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("InsertCustomer7", "Home")',
+                    data: JSON.stringify(cusG),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function () {
+
+                    }
+                });
+            }
+            if (txtFullNameH1.value != "") {
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("InsertCustomer8", "Home")',
+                    data: JSON.stringify(cusH),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function () {
+
+                    }
+                });
+            }
+            if (txtFullNameI1.value != "") {
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("InsertCustomer9", "Home")',
+                    data: JSON.stringify(cusI),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function () {
+
+                    }
+                });
+            }
+
+
+
+        }
+
+
+
     }
 
 
@@ -985,12 +1920,143 @@
         var totalP = document.getElementById("TotalPrice");
 
 
-
         var myValue = e.value;
 
 
         var bien = document.getElementById("AdultPrice");
- 
+        var g = document.getElementById("gr-if");
+        var g1 = document.getElementById("gr-if1");
+        var g2 = document.getElementById("gr-if2");
+        var g3 = document.getElementById("gr-if3");
+        var g4 = document.getElementById("gr-if4");
+        var g5 = document.getElementById("gr-if5");
+        var g6 = document.getElementById("gr-if6");
+        var g7 = document.getElementById("gr-if7");
+        var g8 = document.getElementById("gr-if8");
+        var g9 = document.getElementById("gr-if9");
+
+        if (e.value == 1) {
+            g.style.display = "flex";
+            g1.style.display = "none";
+            g2.style.display = "none";
+            g3.style.display = "none";
+            g4.style.display = "none";
+            g5.style.display = "none";
+            g6.style.display = "none";
+            g7.style.display = "none";
+            g8.style.display = "none";
+            g9.style.display = "none";
+        }
+        else if (e.value == 2) {
+            g.style.display = "flex";
+            g1.style.display = "flex";
+            g2.style.display = "none";
+            g3.style.display = "none";
+            g4.style.display = "none";
+            g5.style.display = "none";
+            g6.style.display = "none";
+            g7.style.display = "none";
+            g8.style.display = "none";
+            g9.style.display = "none";
+        }
+        else if (e.value == 3) {
+
+            g.style.display = "flex";
+            g1.style.display = "flex";
+            g2.style.display = "flex";
+            g3.style.display = "none";
+            g4.style.display = "none";
+            g5.style.display = "none";
+            g6.style.display = "none";
+            g7.style.display = "none";
+            g8.style.display = "none";
+            g9.style.display = "none";
+        }
+        else if (e.value == 4) {
+            g.style.display = "flex";
+            g1.style.display = "flex";
+            g2.style.display = "flex";
+            g3.style.display = "flex";
+            g4.style.display = "none";
+            g5.style.display = "none";
+            g6.style.display = "none";
+            g7.style.display = "none";
+            g8.style.display = "none";
+            g9.style.display = "none";
+        }
+        else if (e.value == 5) {
+            g.style.display = "flex";
+            g1.style.display = "flex";
+            g2.style.display = "flex";
+            g3.style.display = "flex";
+            g4.style.display = "flex";
+            g5.style.display = "none";
+            g6.style.display = "none";
+            g7.style.display = "none";
+            g8.style.display = "none";
+            g9.style.display = "none";
+        }
+        else if (e.value == 6) {
+            g.style.display = "flex";
+            g1.style.display = "flex";
+            g2.style.display = "flex";
+            g3.style.display = "flex";
+            g4.style.display = "flex";
+            g5.style.display = "flex";
+            g6.style.display = "none";
+            g7.style.display = "none";
+            g8.style.display = "none";
+            g9.style.display = "none";
+        }
+        else if (e.value == 7) {
+            g.style.display = "flex";
+            g1.style.display = "flex";
+            g2.style.display = "flex";
+            g3.style.display = "flex";
+            g4.style.display = "flex";
+            g5.style.display = "flex";
+            g6.style.display = "flex";
+            g7.style.display = "none";
+            g8.style.display = "none";
+            g9.style.display = "none";
+        }
+        else if (e.value == 8) {
+            g.style.display = "flex";
+            g1.style.display = "flex";
+            g2.style.display = "flex";
+            g3.style.display = "flex";
+            g4.style.display = "flex";
+            g5.style.display = "flex";
+            g6.style.display = "flex";
+            g7.style.display = "flex";
+            g8.style.display = "none";
+            g9.style.display = "none";
+        }
+        else if (e.value == 9) {
+            g.style.display = "flex";
+            g1.style.display = "flex";
+            g2.style.display = "flex";
+            g3.style.display = "flex";
+            g4.style.display = "flex";
+            g5.style.display = "flex";
+            g6.style.display = "flex";
+            g7.style.display = "flex";
+            g8.style.display = "flex";
+            g9.style.display = "none";
+        }
+        else if (e.value == 10) {
+            g.style.display = "flex";
+            g1.style.display = "flex";
+            g2.style.display = "flex";
+            g3.style.display = "flex";
+            g4.style.display = "flex";
+            g5.style.display = "flex";
+            g6.style.display = "flex";
+            g7.style.display = "flex";
+            g8.style.display = "flex";
+            g9.style.display = "flex";
+        }
+
 
 
         bien.innerHTML = myValue;

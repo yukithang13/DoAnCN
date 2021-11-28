@@ -110,6 +110,7 @@ namespace DoAnCN.Controllers
             vv.FullName = _customer.FullName;
             vv.Email = _customer.Email;
             vv.Phone = _customer.Phone;
+            vv.CustumersNumber = _customer.CustumersNumber;
             vv.Note = _customer.Note;
             db.InfoContacts.Add(vv);
             db.SaveChanges();
@@ -132,22 +133,142 @@ namespace DoAnCN.Controllers
             return Json(cus);
         }
 
+        [HttpPost]
+        public ActionResult InsertCustomer1(Custumer cus)
+        {
+            Custumer vv = new Custumer();
+
+            vv.FullNameCustumer = cus.FullNameCustumer;
+            vv.DateOfBirth = cus.DateOfBirth;
+            vv.Sex = cus.Sex;
+            vv.IdTour = cus.IdTour;
+            db.Custumers.Add(vv);
+            db.SaveChanges();
+
+            return Json(cus);
+        }
 
         [HttpPost]
-        public ActionResult _Booking(List<Custumer> custumer)
+        public ActionResult InsertCustomer2(Custumer cus)
         {
-  
-            foreach (Custumer Emp in custumer)
-            {
-                Custumer cus = db.Custumers.Find(Emp.IdCustumer);
-                cus.FullNameCustumer = Emp.FullNameCustumer;
-                cus.DateOfBirth = Emp.DateOfBirth;
-                cus.Sex = Emp.Sex;
-                cus.IdTour = Emp.IdTour;
-            }
+            Custumer vv = new Custumer();
+
+            vv.FullNameCustumer = cus.FullNameCustumer;
+            vv.DateOfBirth = cus.DateOfBirth;
+            vv.Sex = cus.Sex;
+            vv.IdTour = cus.IdTour;
+            db.Custumers.Add(vv);
             db.SaveChanges();
-            return View();
+
+            return Json(cus);
         }
+
+        [HttpPost]
+        public ActionResult InsertCustomer3(Custumer cus)
+        {
+            Custumer vv = new Custumer();
+
+            vv.FullNameCustumer = cus.FullNameCustumer;
+            vv.DateOfBirth = cus.DateOfBirth;
+            vv.Sex = cus.Sex;
+            vv.IdTour = cus.IdTour;
+            db.Custumers.Add(vv);
+            db.SaveChanges();
+
+            return Json(cus);
+        }
+
+        [HttpPost]
+        public ActionResult InsertCustomer4(Custumer cus)
+        {
+            Custumer vv = new Custumer();
+
+            vv.FullNameCustumer = cus.FullNameCustumer;
+            vv.DateOfBirth = cus.DateOfBirth;
+            vv.Sex = cus.Sex;
+            vv.IdTour = cus.IdTour;
+            db.Custumers.Add(vv);
+            db.SaveChanges();
+
+            return Json(cus);
+        }
+
+        [HttpPost]
+        public ActionResult InsertCustomer5(Custumer cus)
+        {
+            Custumer vv = new Custumer();
+
+            vv.FullNameCustumer = cus.FullNameCustumer;
+            vv.DateOfBirth = cus.DateOfBirth;
+            vv.Sex = cus.Sex;
+            vv.IdTour = cus.IdTour;
+            db.Custumers.Add(vv);
+            db.SaveChanges();
+
+            return Json(cus);
+        }
+
+        [HttpPost]
+        public ActionResult InsertCustomer6(Custumer cus)
+        {
+            Custumer vv = new Custumer();
+
+            vv.FullNameCustumer = cus.FullNameCustumer;
+            vv.DateOfBirth = cus.DateOfBirth;
+            vv.Sex = cus.Sex;
+            vv.IdTour = cus.IdTour;
+            db.Custumers.Add(vv);
+            db.SaveChanges();
+
+            return Json(cus);
+        }
+
+        [HttpPost]
+        public ActionResult InsertCustomer7(Custumer cus)
+        {
+            Custumer vv = new Custumer();
+
+            vv.FullNameCustumer = cus.FullNameCustumer;
+            vv.DateOfBirth = cus.DateOfBirth;
+            vv.Sex = cus.Sex;
+            vv.IdTour = cus.IdTour;
+            db.Custumers.Add(vv);
+            db.SaveChanges();
+
+            return Json(cus);
+        }
+
+        [HttpPost]
+        public ActionResult InsertCustomer8(Custumer cus)
+        {
+            Custumer vv = new Custumer();
+
+            vv.FullNameCustumer = cus.FullNameCustumer;
+            vv.DateOfBirth = cus.DateOfBirth;
+            vv.Sex = cus.Sex;
+            vv.IdTour = cus.IdTour;
+            db.Custumers.Add(vv);
+            db.SaveChanges();
+
+            return Json(cus);
+        }
+
+        [HttpPost]
+        public ActionResult InsertCustomer9(Custumer cus)
+        {
+            Custumer vv = new Custumer();
+
+            vv.FullNameCustumer = cus.FullNameCustumer;
+            vv.DateOfBirth = cus.DateOfBirth;
+            vv.Sex = cus.Sex;
+            vv.IdTour = cus.IdTour;
+            db.Custumers.Add(vv);
+            db.SaveChanges();
+
+            return Json(cus);
+        }
+
+
 
 
 
