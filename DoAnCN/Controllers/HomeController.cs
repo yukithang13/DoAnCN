@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -19,7 +20,7 @@ namespace DoAnCN.Controllers
 
             var db = TourBUS.Top4().ToPagedList(1, 4);
             return View(db);
-            
+
         }
 
         public ActionResult About()
@@ -32,14 +33,14 @@ namespace DoAnCN.Controllers
 
 
 
-        DulichEntities6 db = new DulichEntities6();
+        DulichEntities7 db = new DulichEntities7();
         public ActionResult Tour()
         {
             int page = 1; int pagesize = 100;
 
             var db = TourBUS.DanhSach().ToPagedList(page, pagesize);
             return View(db);
-            
+
         }
 
 
@@ -49,7 +50,7 @@ namespace DoAnCN.Controllers
             var db = TourBUS.DanhSach();
 
             Tour tour1 = new Tour();
-            
+
             foreach (Tour tour in db)
             {
                 if (tour.IdTour == id)
@@ -64,8 +65,8 @@ namespace DoAnCN.Controllers
             }
             return View(tour1);
 
-           
-            
+
+
 
         }
 
@@ -74,7 +75,7 @@ namespace DoAnCN.Controllers
             var employeeViewModel = new TourBUS
             {
                 Tours = db.Tours.ToList(),
-                
+
                 Admin = db.AdminTs.ToList()
             };
             return View(employeeViewModel);
@@ -268,6 +269,25 @@ namespace DoAnCN.Controllers
             return Json(cus);
         }
 
+        [HttpPost]
+        public ActionResult InsertCTTour(DetailTour det)
+        {
+            DetailTour vv = new DetailTour();
+
+            var idcuoi = db.InfoContacts.OrderByDescending(s => s.IdContact).FirstOrDefault(s => s.IdContact == s.IdContact);
+            vv.IdContact = idcuoi.IdContact;
+            vv.IdTour = det.IdTour;
+            vv.RegistrationDate = det.RegistrationDate;
+            vv.Status = det.Status;
+            vv.Payments = det.Payments;
+            vv.PaymentTerm = det.PaymentTerm;
+
+            db.DetailTours.Add(vv);
+            db.SaveChanges();
+
+            return Json(det);
+        }
+
 
 
 
@@ -299,5 +319,29 @@ namespace DoAnCN.Controllers
             ViewBag.Message = "Successfully";
             return View();
         }
+
+        [HttpPost]
+        public ActionResult GuiMailTour2(DoAnCN.Models.Data.Gmail model)
+        {
+
+            MailMessage mm = new MailMessage("yukithang0@gmail.com", model.To);
+            mm.Subject = model.Subject;
+            mm.Body = model.Body;
+            mm.IsBodyHtml = true;
+
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
+
+            NetworkCredential nc = new NetworkCredential("yukithang0@gmail.com", "thang123t");
+            smtp.UseDefaultCredentials = true;
+            smtp.Credentials = nc;
+            smtp.Send(mm);
+
+            ViewBag.Message = "Successfully";
+            return View();
+        }
+
     }
 }

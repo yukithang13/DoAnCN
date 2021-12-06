@@ -1,0 +1,86 @@
+﻿@model IEnumerable<DoAnCN.Models.DetailTour>
+
+@{
+    ViewBag.Title = "ListDetailAd";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>ListDetailAd</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<h2>Gửi Thanh Toán</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdContact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdTour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InfoContact.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegistrationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Payments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaymentTerm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InfoContact.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InfoContact.Email)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdContact)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InfoContact.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegistrationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Payments)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentTerm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InfoContact.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InfoContact.Email)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditDetail", new { id = item.IdContact }) |
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+

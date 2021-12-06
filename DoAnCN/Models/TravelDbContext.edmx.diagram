@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="22edc4c7fbcf4a38a4082dec32ed9786" Name="Diagram1">
+      <Diagram DiagramId="57ddaf273c9b4b9a9d108b6d1c9de8e8" Name="Diagram1">
         <EntityTypeShape EntityType="DulichModel.AdminT" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DulichModel.AspNetRole" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="DulichModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
@@ -13,6 +13,7 @@
         <EntityTypeShape EntityType="DulichModel.Custumer" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="DulichModel.DetailTour" Width="1.5" PointX="6" PointY="8.625" IsExpanded="true" />
         <EntityTypeShape EntityType="DulichModel.InfoContact" Width="1.5" PointX="3.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DulichModel.sysdiagram" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DulichModel.Tour" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
         <AssociationConnector Association="DulichModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="DulichModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />

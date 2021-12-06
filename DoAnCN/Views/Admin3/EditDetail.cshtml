@@ -1,0 +1,112 @@
+﻿@model DoAnCN.Models.DetailTour
+
+@{
+    ViewBag.Title = "EditDetail";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>EditDetail</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>DetailTour</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdContact, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.IdContact, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.IdContact, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdTour, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.IdTour, new { htmlAttributes = new { @class = "form-control", @id = "IdTour11" } })
+                @Html.ValidationMessageFor(model => model.IdTour, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RegistrationDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RegistrationDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RegistrationDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Payments, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Payments, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Payments, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PaymentTerm, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PaymentTerm, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PaymentTerm, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+
+        </div>
+    </div>
+
+}
+<input id="name11" type="text" value="@Model.InfoContact.FullName">
+<input id="Addr11" type="text" value="@Model.Tour.StartingGate">
+<input id="day11" type="text" value="@Model.Tour.StartTour">
+<input id="email1" name="Email" type="text" value="@Model.InfoContact.Email">
+<input onclick="sendmail1();" type="button" id="apdung1" value="Gửi">
+<div>
+    @Html.ActionLink("Back to List", "ListDetailAd")
+</div>
+
+<script>
+        function sendmail1() {
+
+            var txtEmail = document.getElementById("email1").value;
+            var txtName = document.getElementById("name11").value;
+            var txtDay = document.getElementById("day11").value;
+            var txtTai = document.getElementById("Addr11").value;
+            var txtIdT = document.getElementById("IdTour11").value;
+            var _mail1 = {};
+            _mail1.To = txtEmail;
+
+            _mail1.Subject = "Thanh toán thành công";
+
+            _mail1.Body = "<!doctype html><html lang='en' xmlns:v='urn:schemas-microsoft-com:vml' xmlns:o='urn:schemas-microsoft-com:office:office'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width'><meta http-equiv='x-ua-compatible' content='ie=edge'><meta name='x-apple-disable-message-reformatting'> <title></title><link href='https://fonts.googleapis.com/css?family=work+sans:200,300,400,500,600,700' rel='stylesheet'><style>html,body {margin: 0 auto !important;padding: 0 !important;height: 100% !important;width: 100% !important;background: #f1f1f1;}* {-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;}div[style*='margin: 16px 0'] {margin: 0 !important;}table {border-spacing: 0 !important;border-collapse: collapse !important;table-layout: fixed !important;margin: 0 auto !important;}td {text-align: center;}img {-ms-interpolation-mode:bicubic;}a {text-decoration: none;}*[x-apple-data-detectors], .unstyle-auto-detected-links *,.abn {border-bottom: 0 !important;cursor: default !important;color: inherit !important;text-decoration: none !important;font-size: inherit !important;font-family: inherit !important;font-weight: inherit !important;line-height: inherit !important;}.a6s {display: none !important;opacity: 0.01 !important;}.im {color: inherit !important;}img.g-img + div {display: none !important;}</style><style>.primary{background: #17bebb;}.bg_white{background: #ffffff;}.bg_light{background: #f7fafa;}.bg_black{background: #000000;}.bg_dark{background: rgba(0,0,0,.8);}.email-section{padding:2.5em;}/*button*/.btn{padding: 10px 15px;display: inline-block;}.btn.btn-primary{border-radius: 5px;background: #17bebb;color: #ffffff;}.btn.btn-white{border-radius: 5px;background: #ffffff;color: #000000;}.btn.btn-white-outline{border-radius: 5px;background: transparent;border: 1px solid #fff;color: #fff;}.btn.btn-black-outline{border-radius: 0px;background: transparent;border: 2px solid #000;color: #000;font-weight: 700;}.btn-custom{color: rgba(0,0,0,.3);text-decoration: underline;}h1,h2,h3,h4,h5,h6{font-family: 'work sans', sans-serif;color: #000000;margin-top: 0;font-weight: 400;}body{font-family: 'work sans', sans-serif;font-weight: 400;font-size: 15px;line-height: 1.8;color: rgba(0,0,0,.4);}a{color: #17bebb;}/*logo*/.logo h1{margin: 0;}.logo h1 a{color: #17bebb;font-size: 24px;font-weight: 700;font-family: 'work sans', sans-serif;}/*hero*/.hero{position: relative;z-index: 0;}.hero .text{color: rgba(0,0,0,.3);}.hero .text h2{color: #000;font-size: 34px;margin-bottom: 15px;font-weight: 300;line-height: 1.2;}.hero .text h3{font-size: 24px;font-weight: 200;}.hero .text h2 span{font-weight: 600;color: #000;}/*product*/.product-entry{display: block;position: relative;float: left;padding-top: 20px;}.product-entry .text{width: calc(100% - 125px);padding-left: 20px;}.product-entry .text h3{margin-bottom: 0;padding-bottom: 0;}.product-entry .text p{margin-top: 0;}.product-entry img, .product-entry .text{float: left;}ul.social{padding: 0;}ul.social li{display: inline-block;margin-right: 10px;}/*footer*/.footer{border-top: 1px solid rgba(0,0,0,.05);color: rgba(0,0,0,.5);}.footer .heading{color: #000;font-size: 20px;}.footer ul{margin: 0;padding: 0;}.footer ul li{list-style: none;margin-bottom: 10px;}.footer ul li a{color: rgba(0,0,0,1);}</style></head><body width='100%' style='margin: 0; padding: 0 !important; background-color: #f1f1f1;'><center style='width: 100%; background-color: #f1f1f1;'><div style='display: none; font-size: 1px;max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; font-family: sans-serif;'>&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;</div><div style='max-width: 800px; margin: 0 auto;' class='email-container'><!-- begin body --><table align='center' role='presentation' cellspacing='0' cellpadding='0' border='0' width='100%' style='margin: auto;'><tr><td valign='top' class='bg_white' style='padding: 1em 2.5em 0 2.5em;'><table role='presentation' border='0' cellpadding='0' cellspacing='0' width='100%'><tr><td class='logo' style='text-align: left;'><h1><a href='#'>travel three</a></h1></td></tr></table></td></tr><!-- end tr --><tr><td valign='middle' class='hero bg_white' style='padding: 2em 0 2em 0;'><table role='presentation' border='0' cellpadding='0' cellspacing='0' width='100%'><tr><td style='padding: 0 2.5em; text-align: left;'><div class='text'><h2>Cảm ơn anh " + txtName + " đã thanh toán chuyến đi " + txtIdT + ".</h2><h3>Quý khách chuẩn bị hành lý để ngày " + txtDay + " tới khởi hành tại " + txtTai + " của chúng tôi.</h3><h3>Email này như một hóa đơn để xác nhận bạn.</h3></div></td></tr></table></td></tr><!-- end tr --></p><h2>Điều khoản và phương thức thanh toán</h2></center><h2>1.Giá vé du lịch</h2><p>Giá vé du lịch được tính theo tiền đồng (việt nam - vnđ). trường hợp khách thanh toán bằng usd sẽ được quy đổi ra vnđ theo tỉ giá của ngân hàng đầu tư và phát triển việt nam - chi nhánh tp.hcm tại thời điểm thanh toán.giá vé chỉ bao gồm những khoản được liệt kê một cách rõ ràng trong phần “bao gồm” trong các chương trình du lịch. vietravel không có nghĩa vụ thanh toán bất cứ chi phí nào không nằm trong phần “bao gồm”. </p><h2>2. Giá dành cho trẻ em</h2><p>- Trẻ em dưới 5 tuổi:  không thu phí dịch vụ, bố mẹ tự lo cho bé và thanh toán các chi phí phát sinh (đối với các dịch vụ tính phí theo chiều cao…). hai người lớn chỉ được kèm 1 trẻ em dưới 5 tuổi, trẻ em thứ 2 sẽ đóng phí theo qui định dành cho độ tuổi từ 5 đến dưới 12 tuổi và phụ thu phòng đơn. vé máy bay, tàu hỏa, phương tiện vận chuyển công cộng mua vé theo qui định của các đơn vị vận chuyển (nếu có)</h2></p><h2>3. Thanh toán</h2><p>Khi thanh toán, quý khách vui lòng cung cấp đầy đủ thông tin và đặt cọc ít nhất 50% tổng số tiền tour để giữ chỗ, số tiền còn lại quý khách sẽ thanh toán trước ngày khởi hành 05 ngày làm việc (tour ngày thường) và trước 10 ngày làm việc (tour dịp lễ, tết)”.<br><strong>- Thanh toán bằng tiền mặt hoặc chuyển khoản tới tài khoản ngân hàng của chúng tôi.</strong><br>+ Tên tài khoản :<strong>Ngô Tấn Đạt</strong><br>+ Số tài khoản  : <strong>007 100 115 1480</strong><br>+ Ngân hàng     : <strong>vietcombank – cn tp.hcm</strong><br><strong>- Thanh toán bằng ví momo chuyển khoản tới tài khoản của chúng tôi.</strong><br>+ Tên tài khoản :<strong>Ngô Tấn Đạt</strong><br>+ Số tài khoản:<strong>0965645273</strong><br>Việc thanh toán được xem là hoàn tất khi chúng tôi nhận được đủ tiền vé du lịch trước lúc khởi hành hoặc theo hợp đồng thỏa thuận giữa hai bên. bất kỳ mọi sự thanh toán chậm trễ dẫn đến việc hủy dịch vụ không thuộc trách nhiệm của vietravel.</p><p><h2>4. Hủy vé và phí hủy vé du lịch</h2>- Trường hợp bị hủy bỏ do chúng tôi:<br>+ Nếu chúng tôi không thực hiện được chuyến du lịch, chúng tôi phải báo ngay cho khách hàng biết và thanh toán lại cho khách hàng toàn bộ số tiền khách hàng đã đóng trong vòng 3 ngày kể từ lúc việc thông báo hủy chuyến du lịch bằng tiền mặt hoặc chuyển khoản.<br>- Trường hợp bị hủy bỏ do khách hàng:<br>+ Sau khi đóng tiền, nếu quý khách muốn chuyển/hủy tour xin vui lòng mang vé du lịch đến văn phòng đăng ký tour để làm thủ tục chuyển/hủy tour và chịu mất phí theo quy định của chúng tôi. Không giải quyết các trường hợp liên hệ chuyển/hủy tour qua điện thoại.</p><p><h2>5. Hành lý</h2>Hành lý gọn nhẹ, với các chương trình sử dụng dịch vụ hàng không, hành lý miễn cước sẽ do các hãng hàng không qui định. chúng tôi không chịu trách nhiệm về sự thất lạc, hư hỏng hành lý hoặc bất kỳ vật dụng gì của du khách trong suốt chuyến đi, du khách tự bảo quản hành lý của mình. nếu khách hàng bị mất hay thất lạc hành lý thì chúng tôi sẽ giúp hành khách liên lạc và khai báo với các bộ phận liên quan truy tìm hành lý bị mất hay thất lạc. việc bồi thường hành lý bị mất hay thất lạc sẽ theo qui định của các đơn vị cung cấp dịch vụ hoặc các đơn vị bảo hiểm (nếu có).</p></body></html>";
+
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("GuiMail1", "Admin3")',
+                data: JSON.stringify(_mail1),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function () {
+
+                }
+            });
+            alert("Đã gửi mail!");
+}
+</script>

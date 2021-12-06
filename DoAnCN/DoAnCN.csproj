@@ -194,8 +194,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\AdminVController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Admin3Controller.cs" />
     <Compile Include="Controllers\EmailSetupController.cs" />
@@ -204,7 +202,6 @@
     <Compile Include="Models\AdminT.cs">
       <DependentUpon>TravelDbContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Data\AdminTBUS.cs" />
     <Compile Include="Models\AspNetRole.cs">
       <DependentUpon>TravelDbContext.tt</DependentUpon>
     </Compile>
@@ -220,23 +217,29 @@
     <Compile Include="Models\Custumer.cs">
       <DependentUpon>TravelDbContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Data\AdminTBUS.cs" />
     <Compile Include="Models\Data\Gmail.cs" />
     <Compile Include="Models\Data\InfoBUS.cs" />
-    <Compile Include="Models\DetailTour.cs">
-      <DependentUpon>TravelDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\InfoContact.cs">
-      <DependentUpon>TravelDbContext.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Data\PopularBUS.cs" />
-    <Compile Include="Models\Tour.cs">
-      <DependentUpon>TravelDbContext.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Data\TourBUS.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\DetailTour.cs">
+      <DependentUpon>TravelDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\InfoContact.cs">
+      <DependentUpon>TravelDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>TravelDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tour.cs">
+      <DependentUpon>TravelDbContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\TravelDbContext.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -252,8 +255,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TravelDbContext.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -1971,10 +1972,6 @@
     <Content Include="Content\js\scripts.js" />
     <Content Include="Content\login.css" />
     <Content Include="Content\LoginAdmin.css" />
-    <Content Include="Content\Slick\ajax-loader.gif" />
-    <Content Include="Content\Slick\fonts\slick.svg" />
-    <Content Include="Content\Slick\slick-theme.css" />
-    <Content Include="Content\Slick\slick.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\tourCard.css" />
     <Content Include="favicon.ico" />
@@ -2046,17 +2043,6 @@
     <Content Include="Content\fontawesome-free-5.15.4-web\webfonts\fa-solid-900.ttf" />
     <Content Include="Content\fontawesome-free-5.15.4-web\webfonts\fa-solid-900.woff" />
     <Content Include="Content\fontawesome-free-5.15.4-web\webfonts\fa-solid-900.woff2" />
-    <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Admin\Views\Shared\Admin.cshtml" />
-    <Content Include="Areas\Admin\Views\AdminV\Homea.cshtml" />
-    <Content Include="Areas\Admin\Views\AdminV\Login.cshtml" />
-    <Content Include="Areas\Admin\Views\AdminV\Register.cshtml" />
-    <Content Include="Content\Slick\slick.scss" />
-    <Content Include="Content\Slick\slick-theme.scss" />
-    <Content Include="Content\Slick\fonts\slick.woff" />
-    <Content Include="Content\Slick\fonts\slick.ttf" />
-    <Content Include="Content\Slick\fonts\slick.eot" />
-    <Content Include="Areas\Admin\Views\AdminV\LoginV.cshtml" />
     <EntityDeploy Include="Models\TravelDbContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>TravelDbContext.Designer.cs</LastGenOutput>
@@ -2124,11 +2110,18 @@
     <Content Include="Views\Admin3\EditTourTe.cshtml" />
     <Content Include="Views\Home\Booking.cshtml" />
     <Content Include="Views\EmailSetup\Email.cshtml" />
+    <Content Include="Views\Admin3\ListCustumerAd.cshtml" />
+    <Content Include="Views\Admin3\EditCustumer.cshtml" />
+    <Content Include="Views\Admin3\DeleteCustumer.cshtml" />
+    <Content Include="Views\Admin3\ListInfoAd.cshtml" />
+    <Content Include="Views\Admin3\EditInfo.cshtml" />
+    <Content Include="Views\Admin3\DeleteInfo.cshtml" />
+    <Content Include="Views\Admin3\ListDetailAd.cshtml" />
+    <Content Include="Views\Admin3\EditDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Views\Home\" />
+    <Folder Include="Areas\" />
     <Folder Include="FileImages\FileImages\" />
   </ItemGroup>
   <ItemGroup>

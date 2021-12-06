@@ -82,8 +82,8 @@
           <Property Name="IdTour" Type="int" Nullable="false" />
           <Property Name="RegistrationDate" Type="datetime" />
           <Property Name="Status" Type="nvarchar" MaxLength="150" />
-          <Property Name="Payments" Type="nvarchar" MaxLength="100" />
-          <Property Name="PaymentTerm" Type="datetime" />
+          <Property Name="Payments" Type="money" />
+          <Property Name="PaymentTerm" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="InfoContact">
           <Key>
@@ -95,6 +95,16 @@
           <Property Name="Phone" Type="char" MaxLength="12" />
           <Property Name="CustumersNumber" Type="int" />
           <Property Name="Note" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Tour">
           <Key>
@@ -216,6 +226,7 @@
           <EntitySet Name="Custumer" EntityType="Self.Custumer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DetailTour" EntityType="Self.DetailTour" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="InfoContact" EntityType="Self.InfoContact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tour" EntityType="Self.Tour" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Custumer_Tour" Association="Self.FK_Custumer_Tour">
             <End Role="Tour" EntitySet="Tour" />
@@ -327,8 +338,8 @@
           <Property Name="IdTour" Type="Int32" Nullable="false" />
           <Property Name="RegistrationDate" Type="DateTime" Precision="3" />
           <Property Name="Status" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Payments" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="PaymentTerm" Type="DateTime" Precision="3" />
+          <Property Name="Payments" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PaymentTerm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="InfoContact" Relationship="Self.FK_DetailTour_InfoContact" FromRole="DetailTour" ToRole="InfoContact" />
           <NavigationProperty Name="Tour" Relationship="Self.FK_DetailTour_Tour" FromRole="DetailTour" ToRole="Tour" />
         </EntityType>
@@ -343,6 +354,16 @@
           <Property Name="CustumersNumber" Type="Int32" />
           <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="DetailTours" Relationship="Self.FK_DetailTour_InfoContact" FromRole="InfoContact" ToRole="DetailTour" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Tour">
           <Key>
@@ -432,7 +453,7 @@
           <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
           <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="DulichEntities6" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DulichEntities7" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AdminTs" EntityType="Self.AdminT" />
           <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
           <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
@@ -441,6 +462,7 @@
           <EntitySet Name="Custumers" EntityType="Self.Custumer" />
           <EntitySet Name="DetailTours" EntityType="Self.DetailTour" />
           <EntitySet Name="InfoContacts" EntityType="Self.InfoContact" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Tours" EntityType="Self.Tour" />
           <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
@@ -472,7 +494,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DulichModelStoreContainer" CdmEntityContainer="DulichEntities6">
+        <EntityContainerMapping StorageEntityContainer="DulichModelStoreContainer" CdmEntityContainer="DulichEntities7">
           <EntitySetMapping Name="AdminTs">
             <EntityTypeMapping TypeName="DulichModel.AdminT">
               <MappingFragment StoreEntitySet="AdminT">
@@ -558,6 +580,17 @@
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="CustumersNumber" ColumnName="CustumersNumber" />
                 <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DulichModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

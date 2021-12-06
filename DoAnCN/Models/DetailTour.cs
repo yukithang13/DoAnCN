@@ -18,8 +18,8 @@ namespace DoAnCN.Models
         public int IdTour { get; set; }
         public Nullable<System.DateTime> RegistrationDate { get; set; }
         public string Status { get; set; }
-        public string Payments { get; set; }
-        public Nullable<System.DateTime> PaymentTerm { get; set; }
+        public Nullable<decimal> Payments { get; set; }
+        public string PaymentTerm { get; set; }
     
         public virtual InfoContact InfoContact { get; set; }
         public virtual Tour Tour { get; set; }

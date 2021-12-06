@@ -26,15 +26,14 @@
                     <div class="ticket-no-wrap d-lg-none">
                         <div class="ticket-no">
                             <i class="icon icon--ticket"></i>
-                            ID: <input type="text" value="@Model.IdTour" id="idt" disabled/>
+                            ID: <input type="text" value="@Model.IdTour" id="idt" disabled />
                         </div>
                     </div>
-                    <p class="title-booking" id="title">@Html.DisplayFor(model => model.TitleTour)</p>
+                    <input class="title-booking" type="text" value="@Model.TitleTour" id="title" disabled />
                     <div class="entry">
                         <div class="entry-inner">
-                            <span>Khởi hành <b>@Html.DisplayFor(model => model.StartTour)</b></span>
+                            <span>Khởi hành <b><input type="text" value="@Model.StartTour" id="StartT" disabled /></b></span>
                             <span>Thời gian <b>@Html.DisplayFor(model => model.TimeTour) ngày</b></span>
-                            <span>Nơi khởi hành <b>@Html.DisplayFor(model => model.StartingGate)</b></span>
                             <span>Số chỗ còn nhận <b>?</b></span><br />
                         </div>
                     </div>
@@ -54,7 +53,7 @@
                         </div>
                         <div class="mail">
                             <label class="lb-text">Email <b>*</b></label>
-                            <input class="form-control" id="email" name="Email" type="text" value="">
+                            <input class="form-control" id="email" name="Email" type="text" value="" >
                         </div>
                         <div class="phone">
                             <label class="lb-text">Số điện thoại <b>*</b></label>
@@ -128,8 +127,8 @@
                                         <span>Giới tính</span>
                                         <select id="sex-if" class="form-control " name="[0].gender" placeholder="Vui lòng chọn giới tính" required="required">
                                             <option selected="selected" value="">Giới tính</option>
-                                            <option value="0">Nữ</option>
-                                            <option value="1">Nam</option>
+                                            <option value="Nữ">Nữ</option>
+                                            <option value="Nam">Nam</option>
                                         </select>
                                     </div>
                                     <div class="group-info-birthday">
@@ -265,8 +264,8 @@
                                         <span>Giới tính</span>
                                         <select id="sex-if1" class="form-control" name="[1].gender" placeholder="Vui lòng chọn giới tính" required="required">
                                             <option selected="selected" value="">Giới tính</option>
-                                            <option value="0">Nữ</option>
-                                            <option value="1">Nam</option>
+                                            <option value="Nữ">Nữ</option>
+                                            <option value="Nam">Nam</option>
                                         </select>
                                     </div>
                                     <div class="group-info-birthday">
@@ -402,8 +401,8 @@
                                         <span>Giới tính</span>
                                         <select id="sex-if2" class="form-control" name="[2].gender" placeholder="Vui lòng chọn giới tính" required="required">
                                             <option selected="selected" value="">Giới tính</option>
-                                            <option value="0">Nữ</option>
-                                            <option value="1">Nam</option>
+                                            <option value="Nữ">Nữ</option>
+                                            <option value="Nam">Nam</option>
                                         </select>
                                     </div>
                                     <div class="group-info-birthday">
@@ -539,8 +538,8 @@
                                         <span>Giới tính</span>
                                         <select id="sex-if3" class="form-control" name="[3].gender" placeholder="Vui lòng chọn giới tính" required="required">
                                             <option selected="selected" value="">Giới tính</option>
-                                            <option value="0">Nữ</option>
-                                            <option value="1">Nam</option>
+                                            <option value="Nữ">Nữ</option>
+                                            <option value="Nam">Nam</option>
                                         </select>
                                     </div>
                                     <div class="group-info-birthday">
@@ -676,8 +675,8 @@
                                         <span>Giới tính</span>
                                         <select id="sex-if4" class="form-control" name="[4].gender" placeholder="Vui lòng chọn giới tính" required="required">
                                             <option selected="selected" value="">Giới tính</option>
-                                            <option value="0">Nữ</option>
-                                            <option value="1">Nam</option>
+                                            <option value="Nữ">Nữ</option>
+                                            <option value="Nam">Nam</option>
                                         </select>
                                     </div>
                                     <div class="group-info-birthday">
@@ -813,8 +812,8 @@
                                         <span>Giới tính</span>
                                         <select id="sex-if5" class="form-control" name="[4].gender" placeholder="Vui lòng chọn giới tính" required="required">
                                             <option selected="selected" value="">Giới tính</option>
-                                            <option value="0">Nữ</option>
-                                            <option value="1">Nam</option>
+                                            <option value="Nữ">Nữ</option>
+                                            <option value="Nam">Nam</option>
                                         </select>
                                     </div>
                                     <div class="group-info-birthday">
@@ -950,8 +949,8 @@
                                         <span>Giới tính</span>
                                         <select id="sex-if6" class="form-control" name="[4].gender" placeholder="Vui lòng chọn giới tính" required="required">
                                             <option selected="selected" value="">Giới tính</option>
-                                            <option value="0">Nữ</option>
-                                            <option value="1">Nam</option>
+                                            <option value="Nữ">Nữ</option>
+                                            <option value="Nam">Nam</option>
                                         </select>
                                     </div>
                                     <div class="group-info-birthday">
@@ -1087,8 +1086,8 @@
                                         <span>Giới tính</span>
                                         <select id="sex-if7" class="form-control" name="[4].gender" placeholder="Vui lòng chọn giới tính" required="required">
                                             <option selected="selected" value="">Giới tính</option>
-                                            <option value="0">Nữ</option>
-                                            <option value="1">Nam</option>
+                                            <option value="Nữ">Nữ</option>
+                                            <option value="Nam">Nam</option>
                                         </select>
                                     </div>
                                     <div class="group-info-birthday">
@@ -1224,8 +1223,8 @@
                                         <span>Giới tính</span>
                                         <select id="sex-if8" class="form-control" name="[4].gender" placeholder="Vui lòng chọn giới tính" required="required">
                                             <option selected="selected" value="">Giới tính</option>
-                                            <option value="0">Nữ</option>
-                                            <option value="1">Nam</option>
+                                            <option value="Nữ">Nữ</option>
+                                            <option value="Nam">Nam</option>
                                         </select>
                                     </div>
                                     <div class="group-info-birthday">
@@ -1361,8 +1360,8 @@
                                         <span>Giới tính</span>
                                         <select id="sex-if9" class="form-control" name="[4].gender" placeholder="Vui lòng chọn giới tính" required="required">
                                             <option selected="selected" value="">Giới tính</option>
-                                            <option value="0">Nữ</option>
-                                            <option value="1">Nam</option>
+                                            <option value="Nữ">Nữ</option>
+                                            <option value="Nam">Nam</option>
                                         </select>
                                     </div>
                                     <div class="group-info-birthday">
@@ -1485,7 +1484,6 @@
                                             <option value="2009">2009</option>
                                         </select>
                                     </div>
-
                                 </div>
                                
                             </div>
@@ -1541,7 +1539,7 @@
                         <i class="fas fa-phone-volume"></i>
                         <p>Gọi miễn phí <br>qua internet</p>
                     </a>
-                    <a href="mailto:info@vietravel.com" class="mail">
+                    <a href="mailto:yukithang0@gmail.com" class="mail">
                         <i class="far fa-envelope"></i>
                         <p>Gửi yêu cầu <br>hỗ trợ ngay</p>
                     </a>
@@ -1566,17 +1564,28 @@
                                 <th class="l2 text-right"><input type="text" id="currentDateTime" disabled></th>
                             </tr>
                             <tr>
-                                <td class="thanhtoan">Hành Khách</td>
+                                <td class="thanhtoan">Hành khách</td>
                                 <td class="t-price text-right">
                                     <p id="AdultPrice"></p>
-   
-
                                 </td>
                             </tr>
                             <tr>
                                 <td class="thanhtoan">Giá</td>
-                                <td class="t-price text-right">                              
+                                <td class="t-price text-right">
                                     <p id="total">@Model.PriceTour</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="thanhtoan">Thanh toán bằng</td>
+                                <td class="t-price text-right">
+                                    <select id="payif" class="form-control" onchange="" required="required">
+                                        <option selected="selected" value="">--- *** ---</option>
+                                        <option value="MoMo">Ví MoMo</option>
+                                        <option value="Tiền Mặt">Tiền Mặt</option>
+                                        <option value="Banking">Banking</option>
+                                        <option value="Visa">Visa</option>
+
+                                    </select>
                                 </td>
                             </tr>
 
@@ -1589,7 +1598,7 @@
                                         <input id="DiscountCode" name="DiscountCode" placeholder="Thêm mã" required="required" type="text" value="">
                                         <input type="hidden" id="hdDiscountCode">
                                         <input type="hidden" id="hdDiscountCode-Price" value="0">
-                                        <input type="button" id="btnDiscountCode" value="Áp dụng">
+                                        <input onclick="sendmail();" type="button" id="apdung" value="Áp dụng">
                                     </form>
                                 </td>
                             </tr>
@@ -1630,6 +1639,55 @@
     var txtEmail1 = document.getElementById("email");
     var txtPhone1 = document.getElementById("mobilephone");
     var txtNote1 = document.getElementById("address");
+    var payit = document.getElementById("payif");
+    var payit1 = document.getElementById("payif").value;
+    var txtTitle = document.getElementById("title").value;
+    var txtStart = document.getElementById("StartT").value;
+    var tongt = document.getElementById("TotalPrice");
+
+
+    function sendmail() {
+        var txtName = $("#contact_name");
+
+        var txtPhone = $("#mobilephone");
+        var txtNote = $("#address");
+        var txtNb = $("#number-if");
+
+        var txtId = document.getElementById("idt").value;
+        var txtFullName = $("#hoten-if");
+        var txtDate = $("#day-if");
+        var txtMon = $("#mon-if");
+        var txtYear = $("#year-if");
+        var txtSex = $("#sex-if");
+
+        var txtFullNameA = $("#hoten-if1");
+        var txtDateA = $("#day-if1");
+        var txtMonA = $("#mon-if1");
+        var txtYearA = $("#year-if1");
+        var txtSexA = $("#sex-if1");
+        var txtEmail = $("#email");
+        var _mail1 = {};
+        _mail1.To = txtEmail.val();
+
+        _mail1.Subject = "Thanh toán thành công";
+
+        _mail1.Body = "<!doctype html><html lang='en' xmlns:v='urn:schemas-microsoft-com:vml' xmlns:o='urn:schemas-microsoft-com:office:office'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width'><meta http-equiv='x-ua-compatible' content='ie=edge'><meta name='x-apple-disable-message-reformatting'> <title></title><link href='https://fonts.googleapis.com/css?family=work+sans:200,300,400,500,600,700' rel='stylesheet'><style>html,body {margin: 0 auto !important;padding: 0 !important;height: 100% !important;width: 100% !important;background: #f1f1f1;}* {-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;}div[style*='margin: 16px 0'] {margin: 0 !important;}table {border-spacing: 0 !important;border-collapse: collapse !important;table-layout: fixed !important;margin: 0 auto !important;}td {text-align: center;}img {-ms-interpolation-mode:bicubic;}a {text-decoration: none;}*[x-apple-data-detectors], .unstyle-auto-detected-links *,.abn {border-bottom: 0 !important;cursor: default !important;color: inherit !important;text-decoration: none !important;font-size: inherit !important;font-family: inherit !important;font-weight: inherit !important;line-height: inherit !important;}.a6s {display: none !important;opacity: 0.01 !important;}.im {color: inherit !important;}img.g-img + div {display: none !important;}</style><style>.primary{background: #17bebb;}.bg_white{background: #ffffff;}.bg_light{background: #f7fafa;}.bg_black{background: #000000;}.bg_dark{background: rgba(0,0,0,.8);}.email-section{padding:2.5em;}/*button*/.btn{padding: 10px 15px;display: inline-block;}.btn.btn-primary{border-radius: 5px;background: #17bebb;color: #ffffff;}.btn.btn-white{border-radius: 5px;background: #ffffff;color: #000000;}.btn.btn-white-outline{border-radius: 5px;background: transparent;border: 1px solid #fff;color: #fff;}.btn.btn-black-outline{border-radius: 0px;background: transparent;border: 2px solid #000;color: #000;font-weight: 700;}.btn-custom{color: rgba(0,0,0,.3);text-decoration: underline;}h1,h2,h3,h4,h5,h6{font-family: 'work sans', sans-serif;color: #000000;margin-top: 0;font-weight: 400;}body{font-family: 'work sans', sans-serif;font-weight: 400;font-size: 15px;line-height: 1.8;color: rgba(0,0,0,.4);}a{color: #17bebb;}/*logo*/.logo h1{margin: 0;}.logo h1 a{color: #17bebb;font-size: 24px;font-weight: 700;font-family: 'work sans', sans-serif;}/*hero*/.hero{position: relative;z-index: 0;}.hero .text{color: rgba(0,0,0,.3);}.hero .text h2{color: #000;font-size: 34px;margin-bottom: 15px;font-weight: 300;line-height: 1.2;}.hero .text h3{font-size: 24px;font-weight: 200;}.hero .text h2 span{font-weight: 600;color: #000;}/*product*/.product-entry{display: block;position: relative;float: left;padding-top: 20px;}.product-entry .text{width: calc(100% - 125px);padding-left: 20px;}.product-entry .text h3{margin-bottom: 0;padding-bottom: 0;}.product-entry .text p{margin-top: 0;}.product-entry img, .product-entry .text{float: left;}ul.social{padding: 0;}ul.social li{display: inline-block;margin-right: 10px;}/*footer*/.footer{border-top: 1px solid rgba(0,0,0,.05);color: rgba(0,0,0,.5);}.footer .heading{color: #000;font-size: 20px;}.footer ul{margin: 0;padding: 0;}.footer ul li{list-style: none;margin-bottom: 10px;}.footer ul li a{color: rgba(0,0,0,1);}</style></head><body width='100%' style='margin: 0; padding: 0 !important; background-color: #f1f1f1;'><center style='width: 100%; background-color: #f1f1f1;'><div style='display: none; font-size: 1px;max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; font-family: sans-serif;'>&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;</div><div style='max-width: 800px; margin: 0 auto;' class='email-container'><!-- begin body --><table align='center' role='presentation' cellspacing='0' cellpadding='0' border='0' width='100%' style='margin: auto;'><tr><td valign='top' class='bg_white' style='padding: 1em 2.5em 0 2.5em;'><table role='presentation' border='0' cellpadding='0' cellspacing='0' width='100%'><tr><td class='logo' style='text-align: left;'><h1><a href='#'>travel three</a></h1></td></tr></table></td></tr><!-- end tr --><tr><td valign='middle' class='hero bg_white' style='padding: 2em 0 2em 0;'><table role='presentation' border='0' cellpadding='0' cellspacing='0' width='100%'><tr><td style='padding: 0 2.5em; text-align: left;'><div class='text'><h2>Cảm ơn quý khách tin tưởng.</h2><h3>Quý khách chuẩn bị hành lý, đồ đạc để tới khởi hành tại trụ sở của chúng tôi tại Làng Đại Học.</h3></div></td></tr></table></td></tr><!-- end tr --></p><h2>Điều khoản và phương thức thanh toán</h2></center><h2>1.Giá vé du lịch</h2><p>Giá vé du lịch được tính theo tiền đồng (việt nam - vnđ). trường hợp khách thanh toán bằng usd sẽ được quy đổi ra vnđ theo tỉ giá của ngân hàng đầu tư và phát triển việt nam - chi nhánh tp.hcm tại thời điểm thanh toán.giá vé chỉ bao gồm những khoản được liệt kê một cách rõ ràng trong phần “bao gồm” trong các chương trình du lịch. vietravel không có nghĩa vụ thanh toán bất cứ chi phí nào không nằm trong phần “bao gồm”. </p><h2>2. Giá dành cho trẻ em</h2><p>- Trẻ em dưới 5 tuổi:  không thu phí dịch vụ, bố mẹ tự lo cho bé và thanh toán các chi phí phát sinh (đối với các dịch vụ tính phí theo chiều cao…). hai người lớn chỉ được kèm 1 trẻ em dưới 5 tuổi, trẻ em thứ 2 sẽ đóng phí theo qui định dành cho độ tuổi từ 5 đến dưới 12 tuổi và phụ thu phòng đơn. vé máy bay, tàu hỏa, phương tiện vận chuyển công cộng mua vé theo qui định của các đơn vị vận chuyển (nếu có)</h2></p><h2>3. Thanh toán</h2><p>Khi thanh toán, quý khách vui lòng cung cấp đầy đủ thông tin và đặt cọc ít nhất 50% tổng số tiền tour để giữ chỗ, số tiền còn lại quý khách sẽ thanh toán trước ngày khởi hành 05 ngày làm việc (tour ngày thường) và trước 10 ngày làm việc (tour dịp lễ, tết)”.<br><strong>- Thanh toán bằng tiền mặt hoặc chuyển khoản tới tài khoản ngân hàng của chúng tôi.</strong><br>+ Tên tài khoản :<strong>Ngô Tấn Đạt</strong><br>+ Số tài khoản  : <strong>007 100 115 1480</strong><br>+ Ngân hàng     : <strong>vietcombank – cn tp.hcm</strong><br><strong>- Thanh toán bằng ví momo chuyển khoản tới tài khoản của chúng tôi.</strong><br>+ Tên tài khoản :<strong>Ngô Tấn Đạt</strong><br>+ Số tài khoản:<strong>0965645273</strong><br>Việc thanh toán được xem là hoàn tất khi chúng tôi nhận được đủ tiền vé du lịch trước lúc khởi hành hoặc theo hợp đồng thỏa thuận giữa hai bên. bất kỳ mọi sự thanh toán chậm trễ dẫn đến việc hủy dịch vụ không thuộc trách nhiệm của vietravel.</p><p><h2>4. Hủy vé và phí hủy vé du lịch</h2>- Trường hợp bị hủy bỏ do chúng tôi:<br>+ Nếu chúng tôi không thực hiện được chuyến du lịch, chúng tôi phải báo ngay cho khách hàng biết và thanh toán lại cho khách hàng toàn bộ số tiền khách hàng đã đóng trong vòng 3 ngày kể từ lúc việc thông báo hủy chuyến du lịch bằng tiền mặt hoặc chuyển khoản.<br>- Trường hợp bị hủy bỏ do khách hàng:<br>+ Sau khi đóng tiền, nếu quý khách muốn chuyển/hủy tour xin vui lòng mang vé du lịch đến văn phòng đăng ký tour để làm thủ tục chuyển/hủy tour và chịu mất phí theo quy định của chúng tôi. Không giải quyết các trường hợp liên hệ chuyển/hủy tour qua điện thoại.</p><p><h2>5. Hành lý</h2>Hành lý gọn nhẹ, với các chương trình sử dụng dịch vụ hàng không, hành lý miễn cước sẽ do các hãng hàng không qui định. chúng tôi không chịu trách nhiệm về sự thất lạc, hư hỏng hành lý hoặc bất kỳ vật dụng gì của du khách trong suốt chuyến đi, du khách tự bảo quản hành lý của mình. nếu khách hàng bị mất hay thất lạc hành lý thì chúng tôi sẽ giúp hành khách liên lạc và khai báo với các bộ phận liên quan truy tìm hành lý bị mất hay thất lạc. việc bồi thường hành lý bị mất hay thất lạc sẽ theo qui định của các đơn vị cung cấp dịch vụ hoặc các đơn vị bảo hiểm (nếu có).</p></body></html>";
+
+        $.ajax({
+                type: "POST",
+                url: '@Url.Action("GuiMail1", "Admin3")',
+                data: JSON.stringify(_mail1),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function () {
+
+                }
+        });
+        alert("Đã gửi mail!");
+    }
+
+
+
 
 
     function tt() {
@@ -1790,7 +1848,7 @@
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function () {
-                alert("Add roi`! ");
+                alert("Kiểm tra email để thanh toán hoặc liên lệ holine để hiểu rõ hơn! ");
                 }
             });
             if (txtFullNameA1.value != "") {
@@ -1903,6 +1961,42 @@
             }
 
 
+            var MoMo = $("#payif");
+            var Date1 = $("#currentDateTime");
+            var Tong = $("#TotalPrice");
+            var txtId = $("#idt");
+            var detail = {};
+            detail.PaymentTerm = MoMo.val();
+            detail.RegistrationDate = Date1.val();
+            detail.Payments = Tong.val();
+            detail.Status = "Chưa thanh toán";
+            detail.IdTour = txtId.val();
+
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("InsertCTTour", "Home")',
+                    data: JSON.stringify(detail),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function () {
+
+                    }
+                });
+
+            var _mail = {};
+            _mail.To = txtEmail.val();
+            _mail.Subject = "Thông tin đăng kí của quý khách";
+            _mail.Body = "<!doctype html><html lang='en' xmlns:v='urn:schemas-microsoft-com:vml' xmlns:o='urn:schemas-microsoft-com:office:office'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width'><meta http-equiv='x-ua-compatible' content='ie=edge'><meta name='x-apple-disable-message-reformatting'> <title></title><link href='https://fonts.googleapis.com/css?family=work+sans:200,300,400,500,600,700' rel='stylesheet'><style>html,body {margin: 0 auto !important;padding: 0 !important;height: 100% !important;width: 100% !important;background: #f1f1f1;}* {-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;}div[style*='margin: 16px 0'] {margin: 0 !important;}table {border-spacing: 0 !important;border-collapse: collapse !important;table-layout: fixed !important;margin: 0 auto !important;}td {text-align: center;}img {-ms-interpolation-mode:bicubic;}a {text-decoration: none;}*[x-apple-data-detectors], .unstyle-auto-detected-links *,.abn {border-bottom: 0 !important;cursor: default !important;color: inherit !important;text-decoration: none !important;font-size: inherit !important;font-family: inherit !important;font-weight: inherit !important;line-height: inherit !important;}.a6s {display: none !important;opacity: 0.01 !important;}.im {color: inherit !important;}img.g-img + div {display: none !important;}</style><style>.primary{background: #17bebb;}.bg_white{background: #ffffff;}.bg_light{background: #f7fafa;}.bg_black{background: #000000;}.bg_dark{background: rgba(0,0,0,.8);}.email-section{padding:2.5em;}/*button*/.btn{padding: 10px 15px;display: inline-block;}.btn.btn-primary{border-radius: 5px;background: #17bebb;color: #ffffff;}.btn.btn-white{border-radius: 5px;background: #ffffff;color: #000000;}.btn.btn-white-outline{border-radius: 5px;background: transparent;border: 1px solid #fff;color: #fff;}.btn.btn-black-outline{border-radius: 0px;background: transparent;border: 2px solid #000;color: #000;font-weight: 700;}.btn-custom{color: rgba(0,0,0,.3);text-decoration: underline;}h1,h2,h3,h4,h5,h6{font-family: 'work sans', sans-serif;color: #000000;margin-top: 0;font-weight: 400;}body{font-family: 'work sans', sans-serif;font-weight: 400;font-size: 15px;line-height: 1.8;color: rgba(0,0,0,.4);}a{color: #17bebb;}/*logo*/.logo h1{margin: 0;}.logo h1 a{color: #17bebb;font-size: 24px;font-weight: 700;font-family: 'work sans', sans-serif;}/*hero*/.hero{position: relative;z-index: 0;}.hero .text{color: rgba(0,0,0,.3);}.hero .text h2{color: #000;font-size: 34px;margin-bottom: 15px;font-weight: 300;line-height: 1.2;}.hero .text h3{font-size: 24px;font-weight: 200;}.hero .text h2 span{font-weight: 600;color: #000;}/*product*/.product-entry{display: block;position: relative;float: left;padding-top: 20px;}.product-entry .text{width: calc(100% - 125px);padding-left: 20px;}.product-entry .text h3{margin-bottom: 0;padding-bottom: 0;}.product-entry .text p{margin-top: 0;}.product-entry img, .product-entry .text{float: left;}ul.social{padding: 0;}ul.social li{display: inline-block;margin-right: 10px;}/*footer*/.footer{border-top: 1px solid rgba(0,0,0,.05);color: rgba(0,0,0,.5);}.footer .heading{color: #000;font-size: 20px;}.footer ul{margin: 0;padding: 0;}.footer ul li{list-style: none;margin-bottom: 10px;}.footer ul li a{color: rgba(0,0,0,1);}</style></head><body width='100%' style='margin: 0; padding: 0 !important; background-color: #f1f1f1;'><center style='width: 100%; background-color: #f1f1f1;'><div style='display: none; font-size: 1px;max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; font-family: sans-serif;'>&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;</div><div style='max-width: 800px; margin: 0 auto;' class='email-container'><!-- begin body --><table align='center' role='presentation' cellspacing='0' cellpadding='0' border='0' width='100%' style='margin: auto;'><tr><td valign='top' class='bg_white' style='padding: 1em 2.5em 0 2.5em;'><table role='presentation' border='0' cellpadding='0' cellspacing='0' width='100%'><tr><td class='logo' style='text-align: left;'><h1><a href='#'>travel three</a></h1></td></tr></table></td></tr><!-- end tr --><tr><td valign='middle' class='hero bg_white' style='padding: 2em 0 2em 0;'><table role='presentation' border='0' cellpadding='0' cellspacing='0' width='100%'><tr><td style='padding: 0 2.5em; text-align: left;'><div class='text'><h2>Thông tin quý khách</h2><h3>Vui lòng kiểm tra và thanh toán.</h3><h4>Thắc mắc vui lòng liên hệ hotline 0965645273</h4></div></td></tr></table></td></tr><!-- end tr --><tr><table class='bg_white' role='presentation' border='0' cellpadding='0' cellspacing='0' width='100%'><h3 style='font-weight: 700; font-size: 1.2rem; padding-top: 10px; color:blue;'>Thông tin chuyến đi</h3><tr style='border-bottom: 1px solid rgba(0,0,0,.05);'><th>Mã</th><th>Tour</th><th>Khởi hành</th><th>Phương thức</th><th>Giá(vnd)</th></tr><tr><td><span class='price' style='color: #000; font-size: 10px;'>" + txtId + "</span></td><td><div class='product-entry'><h3>" + txtTitle + "</h3></div></td><td><span class='price' style='color: #000; font-size: 10px;'>" + txtStart + "</span></td><td><span class='price' style='color: #000; font-size: 10px;'>" + payit.value + "</span></td><td><span class='price' style='color: #000; font-size: 210px 0px;'>" + tongt.value + "</span></td></tr></tr></table></tr><!-- end tr --><table class='bg_white' role='presentation' border='0' cellpadding='0' cellspacing='0' width='100%'><h3 style='font-weight: 700; font-size: 1.2rem; padding-top: 10px; color:blue;'>Thông tin khách hàng</h3><tr><th>Họ tên</th><th>Giới tính</th><th>Ngày sinh</th></tr><tr><td><h5 style='padding-top:15px;'>" + txtFullName.val() + "</h5></td><td><span class='price' style='color: #000; font-size: 10px;'>" + txtSex.val() + "</span></td><td><span class='price' style='color: #000; font-size: 210px0px;'>" + txtDate.val() + "/" + txtMon.val() + "/" + txtYear.val() + "</span></td></tr><tr><td><h5 style='padding-top:15px;'>" + txtFullNameA.val() + "</h5></td><td><span class='price' style='color: #000; font-size: 10px;'>" + txtSexA.val() + "</span></td><td><span class='price' style='color: #000; font-size: 210px0px;'>" + txtDateA.val() + "/" + txtMonA.val() + "/" + txtYearA.val() + "</span></td></tr><tr><td><h5 style='padding-top:15px;'>" + txtFullNameB.val() + "</h5></td><td><span class='price' style='color: #000; font-size: 10px;'>" + txtSexB.val() + "</span></td><td><span class='price' style='color: #000; font-size: 210px0px;'>" + txtDateB.val() + "/" + txtMonB.val() + "/" + txtYearB.val() + "</span></td></tr> <tr><td><h5 style='padding-top:15px;'>" + txtFullNameC.val() + "</h5></td><td><span class='price' style='color: #000; font-size: 10px;'>" + txtSexC.val() + "</span></td><td><span class='price' style='color: #000; font-size: 210px0px;'>" + txtDateC.val() + "/" + txtMonC.val() + "/" + txtYearC.val() + "</span></td></tr><tr><td><h5 style='padding-top:15px;'>" + txtFullNameD.val() + "</h5></td><td><span class='price' style='color: #000; font-size: 10px;'>" + txtSexD.val() + "</span></td><td><span class='price' style='color: #000; font-size: 210px0px;'>" + txtDateD.val() + "/" + txtMonD.val() + "/" + txtYearD.val() + "</span></td></tr><tr><td><h5 style='padding-top:15px;'>" + txtFullNameE.val() + "</h5></td><td><span class='price' style='color: #000; font-size: 10px;'>" + txtSexE.val() + "</span></td><td><span class='price' style='color: #000; font-size: 210px0px;'>" + txtDateE.val() + "/" + txtMonE.val() + "/" + txtYearE.val() + "</span></td></tr><tr><td><h5 style='padding-top:15px;'>" + txtFullNameF.val() + "</h5></td><td><span class='price' style='color: #000; font-size: 10px;'>" + txtSexF.val() + "</span></td><td><span class='price' style='color: #000; font-size: 210px0px;'>" + txtDateF.val() + "/" + txtMonF.val() + "/" + txtYearF.val() + "</span></td></tr><tr><td><h5 style='padding-top:15px;'>" + txtFullNameG.val() + "</h5></td><td><span class='price' style='color: #000; font-size: 10px;'>" + txtSexG.val() + "</span></td><td><span class='price' style='color: #000; font-size: 210px0px;'>" + txtDateG.val() + "/" + txtMonG.val() + "/" + txtYearG.val() + "</span></td></tr><tr><td><h5 style='padding-top:15px;'>" + txtFullNameH.val() + "</h5></td><td><span class='price' style='color: #000; font-size: 10px;'>" + txtSexH.val() + "</span></td><td><span class='price' style='color: #000; font-size: 210px0px;'>" + txtDateH.val() + "/" + txtMonH.val() + "/" + txtYearH.val() + "</span></td></tr><tr><td><h5 style='padding-top:15px;'>" + txtFullNameI.val() + "</h5></td><td><span class='price' style='color: #000; font-size: 10px;'>" + txtSexI.val() + "</span></td><td><span class='price' style='color: #000; font-size: 210px0px;'>" + txtDateI.val() + "/" + txtMonI.val() + "/" + txtYearI.val() +"</span></td></tr> </tr></table><!-- 1 column text + button : end --></div><p><a href='#' class='btn btn-primary'>tiếp tục đặt tour</a></p><h2>Điều khoản và phương thức thanh toán</h2></center><h2>1.Giá vé du lịch</h2><p>Giá vé du lịch được tính theo tiền đồng (việt nam - vnđ). trường hợp khách thanh toán bằng usd sẽ được quy đổi ra vnđ theo tỉ giá của ngân hàng đầu tư và phát triển việt nam - chi nhánh tp.hcm tại thời điểm thanh toán.giá vé chỉ bao gồm những khoản được liệt kê một cách rõ ràng trong phần “bao gồm” trong các chương trình du lịch. Chúng tôi không có nghĩa vụ thanh toán bất cứ chi phí nào không nằm trong phần “bao gồm”. </p><h2>2. Giá dành cho trẻ em</h2><p>- Trẻ em dưới 5 tuổi:  không thu phí dịch vụ, bố mẹ tự lo cho bé và thanh toán các chi phí phát sinh (đối với các dịch vụ tính phí theo chiều cao…). hai người lớn chỉ được kèm 1 trẻ em dưới 5 tuổi, trẻ em thứ 2 sẽ đóng phí theo qui định dành cho độ tuổi từ 5 đến dưới 12 tuổi và phụ thu phòng đơn. vé máy bay, tàu hỏa, phương tiện vận chuyển công cộng mua vé theo qui định của các đơn vị vận chuyển (nếu có)</h2></p><h2>3. Thanh toán</h2><p>Khi thanh toán, quý khách vui lòng cung cấp đầy đủ thông tin và đặt cọc ít nhất 50% tổng số tiền tour để giữ chỗ, số tiền còn lại quý khách sẽ thanh toán trước ngày khởi hành 05 ngày làm việc (tour ngày thường) và trước 10 ngày làm việc (tour dịp lễ, tết)”.<br><strong>- Thanh toán bằng tiền mặt hoặc chuyển khoản tới tài khoản ngân hàng của chúng tôi.</strong><br>+ Tên tài khoản :<strong>Ngô Tấn Đạt</strong><br>+ Số tài khoản  : <strong>007 100 115 1480</strong><br>+ Ngân hàng     : <strong>vietcombank – cn tp.hcm</strong><br><strong>- Thanh toán bằng ví momo chuyển khoản tới tài khoản của chúng tôi.</strong><br>+ Tên tài khoản :<strong>Ngô Tấn Đạt</strong><br>+ Số tài khoản:<strong>0965645273</strong><br>Việc thanh toán được xem là hoàn tất khi chúng tôi nhận được đủ tiền vé du lịch trước lúc khởi hành hoặc theo hợp đồng thỏa thuận giữa hai bên. bất kỳ mọi sự thanh toán chậm trễ dẫn đến việc hủy dịch vụ không thuộc trách nhiệm của vietravel.</p><p><h2>4. Hủy vé và phí hủy vé du lịch</h2>- Trường hợp bị hủy bỏ do chúng tôi:<br>+ Nếu chúng tôi không thực hiện được chuyến du lịch, chúng tôi phải báo ngay cho khách hàng biết và thanh toán lại cho khách hàng toàn bộ số tiền khách hàng đã đóng trong vòng 3 ngày kể từ lúc việc thông báo hủy chuyến du lịch bằng tiền mặt hoặc chuyển khoản.<br>- Trường hợp bị hủy bỏ do khách hàng:<br>+ Sau khi đóng tiền, nếu quý khách muốn chuyển/hủy tour xin vui lòng mang vé du lịch đến văn phòng đăng ký tour để làm thủ tục chuyển/hủy tour và chịu mất phí theo quy định của chúng tôi. Không giải quyết các trường hợp liên hệ chuyển/hủy tour qua điện thoại.</p><p><h2>5. Hành lý</h2>Hành lý gọn nhẹ, với các chương trình sử dụng dịch vụ hàng không, hành lý miễn cước sẽ do các hãng hàng không qui định. chúng tôi không chịu trách nhiệm về sự thất lạc, hư hỏng hành lý hoặc bất kỳ vật dụng gì của du khách trong suốt chuyến đi, du khách tự bảo quản hành lý của mình. nếu khách hàng bị mất hay thất lạc hành lý thì chúng tôi sẽ giúp hành khách liên lạc và khai báo với các bộ phận liên quan truy tìm hành lý bị mất hay thất lạc. việc bồi thường hành lý bị mất hay thất lạc sẽ theo qui định của các đơn vị cung cấp dịch vụ hoặc các đơn vị bảo hiểm (nếu có).</p></body></html>";
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("GuiMailTour2", "Home")',
+                data: JSON.stringify(_mail),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function () {
+
+                }
+        });
 
         }
 
@@ -2067,5 +2161,7 @@
         alert("Vui lòng điền thông tin " + myValue +" hành khách bên dưới !");
 
     }
+
+
 
 </script>

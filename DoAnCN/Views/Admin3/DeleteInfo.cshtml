@@ -1,0 +1,73 @@
+﻿@model DoAnCN.Models.InfoContact
+
+@{
+    ViewBag.Title = "DeleteInfo";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>DeleteInfo</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>InfoContact</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdContact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustumersNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustumersNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "ListInfoAd")
+        </div>
+    }
+</div>

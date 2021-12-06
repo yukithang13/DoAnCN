@@ -13,10 +13,10 @@ namespace DoAnCN.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DulichEntities6 : DbContext
+    public partial class DulichEntities7 : DbContext
     {
-        public DulichEntities6()
-            : base("name=DulichEntities6")
+        public DulichEntities7()
+            : base("name=DulichEntities7")
         {
         }
     
@@ -33,6 +33,7 @@ namespace DoAnCN.Models
         public virtual DbSet<Custumer> Custumers { get; set; }
         public virtual DbSet<DetailTour> DetailTours { get; set; }
         public virtual DbSet<InfoContact> InfoContacts { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Tour> Tours { get; set; }
     }
 }

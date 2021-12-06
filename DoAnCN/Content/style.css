@@ -1708,4 +1708,16 @@ td.tota {
     
 }
 
+select#payif {
+    width: 40%;
+    float: right;
+}
 
+input#title {
+    width: 550px;
+    border: none;
+    padding: 15px 0;
+}
+input#StartT {
+    border: none;
+}
